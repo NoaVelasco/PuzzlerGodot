@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://n8bhbw6ppy07"]
+
+[ext_resource type="Texture2D" uid="uid://bkktbd8v56xsf" path="res://Sprites/mariosheet.png" id="1_b6gba"]
+[ext_resource type="Script" path="res://scenes/Mario.gd" id="1_dr3r2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of3c4"]
+atlas = ExtResource("1_b6gba")
+region = Rect2(300, 0, 100, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h77yb"]
+atlas = ExtResource("1_b6gba")
+region = Rect2(0, 196, 100, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43lxw"]
+atlas = ExtResource("1_b6gba")
+region = Rect2(100, 196, 100, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw0la"]
+atlas = ExtResource("1_b6gba")
+region = Rect2(300, 294, 100, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5ra2"]
+atlas = ExtResource("1_b6gba")
+region = Rect2(0, 392, 100, 98)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gkj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of3c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h77yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43lxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h77yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iw0la")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5ra2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43lxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h77yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of3c4")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uy750"]
+radius = 13.0
+height = 60.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Mario" type="CharacterBody2D" parent="."]
+script = ExtResource("1_dr3r2")
+speed = 200.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Mario"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mario"]
+sprite_frames = SubResource("SpriteFrames_4gkj3")
+animation = &"Run"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mario"]
+position = Vector2(-9, -15)
+shape = SubResource("CapsuleShape2D_uy750")

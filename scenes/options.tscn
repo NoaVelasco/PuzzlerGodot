@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvl2lyq2xuntd"]
+
+[ext_resource type="Script" path="res://scenes/guardar.gd" id="1_0hu3t"]
+
+[node name="Options" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1144.0
+offset_bottom = 767.0
+color = Color(0.352941, 0.254902, 0.490196, 0.509804)
+
+[node name="Control" type="Control" parent="ColorRect"]
+anchors_preset = 0
+offset_left = 442.0
+offset_top = 237.0
+offset_right = 708.0
+offset_bottom = 468.0
+
+[node name="Button" type="Button" parent="ColorRect/Control"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 88.0
+offset_right = 193.0
+offset_bottom = 119.0
+text = "Guardar partida
+"
+script = ExtResource("1_0hu3t")
+
+[node name="Button2" type="Button" parent="ColorRect/Control"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 148.0
+offset_right = 167.0
+offset_bottom = 179.0
+text = "Volver
+"

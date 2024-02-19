@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bkqdm6dt0ft2m"]
+[gd_scene load_steps=31 format=3 uid="uid://bkqdm6dt0ft2m"]
 
 [ext_resource type="Script" path="res://ingame/game/game.gd" id="1_alaus"]
 [ext_resource type="Texture2D" uid="uid://cx4dnlxa7seg5" path="res://ingame/level/sokoban_tilesheet.png" id="1_qqrgt"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://32wtnomv4gho" path="res://ingame/player/fall.png" id="4_cpf44"]
 [ext_resource type="Texture2D" uid="uid://gxfm2stasn1u" path="res://ingame/player/wall_hit.png" id="5_rssis"]
 [ext_resource type="Texture2D" uid="uid://cn70g224lgix3" path="res://ingame/player/full.png" id="6_sr7x1"]
+[ext_resource type="PackedScene" uid="uid://boni6lclcsy1f" path="res://scenes/pause.tscn" id="10_s5tlg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nunb2"]
 resource_name = "floor"
@@ -329,5 +330,7 @@ shape = SubResource("RectangleShape2D_nwp1l")
 
 [node name="Timer_moves" type="Timer" parent="Duck"]
 wait_time = 0.5
+
+[node name="Pause" parent="." instance=ExtResource("10_s5tlg")]
 
 [connection signal="timeout" from="Duck/Timer_moves" to="." method="_on_timer_timeout"]

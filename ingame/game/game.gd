@@ -16,7 +16,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	if Input.is_action_just_pressed("move_left"):
 		movements.append("left")
 	elif Input.is_action_just_pressed("move_right"):
@@ -29,18 +29,22 @@ func _process(_delta):
 		print(movements)
 	elif Input.is_action_just_pressed("cadena"):
 		len_movs = len(movements)
-		duckmoves()
+		player.duckmoves(delta, index_movs, len_movs, movements, commands)
+		movements = []
+		len_movs = len(movements)
+		index_movs = 0
 
 
 # Cuando el temporizador termina, ejecuta cada movimiento de la lista y se reinicia
 # hasta que no quedan movimientos. Entonces se resetea.
-func duckmoves():
-	while index_movs < len_movs:
-		var move: String = movements[index_movs]
-		player.position += commands[move]
-		index_movs += 1
-		await get_tree().create_timer(0.5).timeout
-
-	movements = []
-	len_movs = len(movements)
-	index_movs = 0
+#func duckmoves(_delta):
+	#while index_movs < len_movs:
+		#var move: String = movements[index_movs]
+		#while not player.move_and_collide(_delta):
+			#player.position += commands[move]
+		#index_movs += 1
+		#await get_tree().create_timer(0.5).timeout
+#
+	#movements = []
+	#len_movs = len(movements)
+	#index_movs = 0

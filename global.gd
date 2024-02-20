@@ -1,7 +1,7 @@
 extends Node
 
 # para guardar la escena a nivel global
-var change_scene = "res://ingame/level/level0.tscn"
+var change_scene = "res://ingame/level/level_1.tscn"
 
 # Para guardar nomre y  puntuación del personaje a nivel global
 var name_player : String

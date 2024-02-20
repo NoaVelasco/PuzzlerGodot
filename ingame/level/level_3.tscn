@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://da7wyv1kt5hl6"]
+[gd_scene load_steps=6 format=3 uid="uid://cdn67ht1m8jb"]
 
 [ext_resource type="Texture2D" uid="uid://cx4dnlxa7seg5" path="res://ingame/level/sokoban_tilesheet.png" id="1_gc6xk"]
 [ext_resource type="Script" path="res://ingame/level/Level1.gd" id="2_dlwdw"]

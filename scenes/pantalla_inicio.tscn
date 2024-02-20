@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://mqas5rmmyxqm"]
 
 [ext_resource type="Script" path="res://scripts/pantalla_inicio.gd" id="1_ohpgv"]
-[ext_resource type="Texture2D" uid="uid://b4hhk114htiyf" path="res://sprites/pantalla_inicio.png" id="1_rq356"]
+[ext_resource type="Texture2D" uid="uid://b4hhk114htiyf" path="res://Sprites/pantalla_inicio.png" id="1_rq356"]
 [ext_resource type="FontFile" uid="uid://3ab1nju8g1l3" path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" id="2_4fu3f"]
 [ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="3_2tsr1"]
 [ext_resource type="Script" path="res://scripts/Opciones.gd" id="5_ldh06"]

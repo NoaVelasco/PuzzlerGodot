@@ -1,0 +1,166 @@
+[gd_scene load_steps=20 format=3 uid="uid://boni6lclcsy1f"]
+
+[ext_resource type="Script" path="res://scripts/pause.gd" id="1_iek7r"]
+[ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="2_p7d1w"]
+[ext_resource type="FontFile" uid="uid://3ab1nju8g1l3" path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" id="2_smfl0"]
+[ext_resource type="Script" path="res://scripts/Opciones.gd" id="4_7q3om"]
+[ext_resource type="Script" path="res://scripts/Salir del juego.gd" id="5_5672t"]
+
+[sub_resource type="Theme" id="Theme_ux30y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yvtmx"]
+font = ExtResource("2_smfl0")
+font_size = 40
+font_color = Color(0.352941, 0, 0.560784, 1)
+shadow_size = 5
+
+[sub_resource type="Theme" id="Theme_sxw4k"]
+default_font_size = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydli7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5n2yp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rq35d"]
+
+[sub_resource type="GDScript" id="GDScript_44f18"]
+script/source = "extends Button
+
+#@export var path = \"res://scenes/escena3DInicial.tscn\"
+
+# Si quiero una imagen que muestre una carga
+@export var path = \"res://scenes/loading.tscn\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	grab_focus()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_pressed():
+	# Si el path no está vacío, llamamos a la ruta que he pasado
+	if path != \"\":
+		#get_tree().change_scene_to_file(path)
+		get_tree().change_scene_to_file(path)
+
+
+func _on_play_pressed():
+	pass # Replace with function body.
+"
+
+[sub_resource type="Theme" id="Theme_3co83"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nh8yk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uq6j6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f6ooh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6m6a2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mb7oq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_66ijt"]
+
+[node name="Pause" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_iek7r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.443137)
+
+[node name="Control" type="Control" parent="ColorRect"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 212.778
+offset_top = 204.883
+offset_right = 810.778
+offset_bottom = 633.883
+
+[node name="Label" type="Label" parent="ColorRect/Control"]
+layout_mode = 0
+offset_left = 194.667
+offset_top = 121.208
+offset_right = 413.667
+offset_bottom = 170.208
+theme = SubResource("Theme_ux30y")
+text = "GODZLER"
+label_settings = SubResource("LabelSettings_yvtmx")
+
+[node name="Play" type="Button" parent="ColorRect/Control"]
+layout_mode = 0
+offset_left = 222.222
+offset_top = 186.863
+offset_right = 379.222
+offset_bottom = 217.863
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_sxw4k")
+theme_override_colors/font_color = Color(0, 0.509804, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.160784, 0.0941176, 0.219608, 1)
+theme_override_colors/font_hover_color = Color(0.580392, 0.894118, 0, 1)
+theme_override_fonts/font = ExtResource("2_p7d1w")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ydli7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5n2yp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rq35d")
+text = "INICIAR JUEGO"
+script = SubResource("GDScript_44f18")
+
+[node name="Opciones" type="Button" parent="ColorRect/Control"]
+layout_mode = 0
+offset_left = 241.778
+offset_top = 231.053
+offset_right = 360.778
+offset_bottom = 266.053
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_3co83")
+theme_override_colors/font_color = Color(0, 0.509804, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.160784, 0.0941176, 0.219608, 1)
+theme_override_colors/font_hover_color = Color(0.580392, 0.894118, 0, 1)
+theme_override_fonts/font = ExtResource("2_p7d1w")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nh8yk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uq6j6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f6ooh")
+text = "OPCIONES"
+script = ExtResource("4_7q3om")
+
+[node name="Salir del juego" type="Button" parent="ColorRect/Control"]
+layout_mode = 0
+offset_left = 241.778
+offset_top = 286.607
+offset_right = 356.778
+offset_bottom = 317.607
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 0.509804, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.160784, 0.0941176, 0.219608, 1)
+theme_override_colors/font_hover_color = Color(0.580392, 0.894118, 0, 1)
+theme_override_fonts/font = ExtResource("2_p7d1w")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6m6a2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mb7oq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_66ijt")
+text = "SALIR"
+script = ExtResource("5_5672t")
+
+[node name="Label" type="Label" parent="."]
+process_mode = 3
+visible = false
+offset_left = 444.0
+offset_top = 72.0
+offset_right = 916.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("2_p7d1w")
+theme_override_font_sizes/font_size = 50
+text = "PAUSE"
+
+[connection signal="pressed" from="ColorRect/Control/Play" to="ColorRect/Control/Play" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/Control/Opciones" to="ColorRect/Control/Opciones" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/Control/Salir del juego" to="ColorRect/Control/Salir del juego" method="_on_pressed"]

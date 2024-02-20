@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=27 format=3 uid="uid://bkqdm6dt0ft2m"]
+
 
 [ext_resource type="Script" path="res://ingame/game/game.gd" id="1_alaus"]
 [ext_resource type="PackedScene" uid="uid://rufu4cplqi5e" path="res://ingame/level/level_1.tscn" id="2_rlucc"]
@@ -8,7 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://32wtnomv4gho" path="res://ingame/player/fall.png" id="4_cpf44"]
 [ext_resource type="Texture2D" uid="uid://gxfm2stasn1u" path="res://ingame/player/wall_hit.png" id="5_rssis"]
 [ext_resource type="Texture2D" uid="uid://cn70g224lgix3" path="res://ingame/player/full.png" id="6_sr7x1"]
+
+
 [ext_resource type="Texture2D" uid="uid://biecut6ed81us" path="res://ingame/player/roll_2.png" id="9_2rrfg"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmcpf"]
 atlas = ExtResource("4_cpf44")
@@ -168,5 +173,7 @@ shape = SubResource("RectangleShape2D_nwp1l")
 [node name="Timer_moves" type="Timer" parent="Duck"]
 wait_time = 0.5
 one_shot = true
+
+[node name="Pause" parent="." instance=ExtResource("10_s5tlg")]
 
 [connection signal="timeout" from="Duck/Timer_moves" to="." method="_on_timer_timeout"]

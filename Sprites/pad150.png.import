@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bvsq7d137bspe"
-path="res://.godot/imported/pad150.png-60727439beea58e6abe6f2f2642665a8.ctex"
+path="res://.godot/imported/pad150.png-3f3eeab2a335f556ac36e9c50ee72938.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/pad150.png"
-dest_files=["res://.godot/imported/pad150.png-60727439beea58e6abe6f2f2642665a8.ctex"]
+source_file="res://sprites/pad150.png"
+dest_files=["res://.godot/imported/pad150.png-3f3eeab2a335f556ac36e9c50ee72938.ctex"]
 
 [params]
 

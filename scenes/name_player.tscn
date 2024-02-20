@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://0nf5g3i058iq"]
+
+[ext_resource type="Script" path="res://scripts/name_player.gd" id="1_vv7ui"]
+
+[node name="name_player" type="Node2D"]
+script = ExtResource("1_vv7ui")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1149.0
+offset_bottom = 764.0
+color = Color(0.352941, 0.254902, 0.490196, 1)
+
+[node name="Control" type="Control" parent="ColorRect"]
+anchors_preset = 0
+offset_left = 375.0
+offset_top = 180.0
+offset_right = 786.0
+offset_bottom = 525.0
+
+[node name="Panel" type="Panel" parent="ColorRect/Control"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 41.0
+offset_right = 303.0
+offset_bottom = 251.0
+
+[node name="name_player" type="TextEdit" parent="ColorRect/Control/Panel"]
+layout_mode = 2
+offset_left = 30.0
+offset_top = 59.0
+offset_right = 181.0
+offset_bottom = 93.0
+
+[node name="continuar" type="Button" parent="ColorRect/Control/Panel"]
+layout_mode = 2
+offset_left = 43.0
+offset_top = 119.0
+offset_right = 159.0
+offset_bottom = 157.0
+text = "Continuar
+"
+
+[node name="back" type="Button" parent="ColorRect/Control/Panel"]
+layout_mode = 2
+offset_left = 66.0
+offset_top = 163.0
+offset_right = 122.0
+offset_bottom = 194.0
+text = "volver
+"
+
+[node name="Label" type="Label" parent="ColorRect/Control/Panel"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 23.0
+offset_right = 180.0
+offset_bottom = 46.0
+text = "Name player:"

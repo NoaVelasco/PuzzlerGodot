@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wltpjq25hly7"
-path="res://.godot/imported/sonicsprite.png-41f2cbf3ba4b59a8ca1e828ddd21c79d.ctex"
+path="res://.godot/imported/sonicsprite.png-196b6b5f1f2e5c7a00c4a2c78d67d762.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sonicsprite.png"
-dest_files=["res://.godot/imported/sonicsprite.png-41f2cbf3ba4b59a8ca1e828ddd21c79d.ctex"]
+source_file="res://Sprites/sonicsprite.png"
+dest_files=["res://.godot/imported/sonicsprite.png-196b6b5f1f2e5c7a00c4a2c78d67d762.ctex"]
 
 [params]
 

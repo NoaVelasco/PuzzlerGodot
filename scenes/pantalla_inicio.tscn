@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://mqas5rmmyxqm"]
 
 [ext_resource type="Script" path="res://scripts/pantalla_inicio.gd" id="1_ohpgv"]
-[ext_resource type="Texture2D" uid="uid://b4hhk114htiyf" path="res://Sprites/pantalla_inicio.png" id="1_rq356"]
+[ext_resource type="Texture2D" uid="uid://b4hhk114htiyf" path="res://sprites/pantalla_inicio.png" id="1_rq356"]
 [ext_resource type="FontFile" uid="uid://3ab1nju8g1l3" path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" id="2_4fu3f"]
 [ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="3_2tsr1"]
 [ext_resource type="Script" path="res://scripts/Opciones.gd" id="5_ldh06"]
@@ -74,15 +74,15 @@ process_mode = 3
 script = ExtResource("1_ohpgv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(579, 325.25)
-scale = Vector2(1.125, 0.792025)
+position = Vector2(579, 382.25)
+scale = Vector2(1.125, 0.931902)
 texture = ExtResource("1_rq356")
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 offset_left = -515.0
 offset_top = -411.0
 offset_right = 508.0
-offset_bottom = 408.0
+offset_bottom = 554.0
 color = Color(0.215686, 0.215686, 0.215686, 0)
 
 [node name="Control" type="Control" parent="Sprite2D/ColorRect"]

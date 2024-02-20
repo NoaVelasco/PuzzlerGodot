@@ -62,3 +62,11 @@ func back():
 	# una nueva redirección iria a la escena desde inicio
 	pass
 	
+
+
+'''
+
+func _on_continuar_pressed():
+	get_tree().change_scene_to_file(path)
+'''
+	

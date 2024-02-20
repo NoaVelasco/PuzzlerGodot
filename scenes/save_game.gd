@@ -4,7 +4,7 @@ const SAVE_FILE_PATH = "user://game_save.save"
 
 @onready var save_button = $ColorRect/Control/Panel/Save
 @onready var back_button = $ColorRect/Control/Panel/Back
-@onready var name_game = $ColorRect/Control/Panel/TextEdit
+# @onready var name_game = $ColorRect/Control/Panel/TextEdit
 
 # podriamos guardar el nivel en que se encuentra
 
@@ -14,9 +14,9 @@ func _ready():
 	
 func save_game():
 	print("guardamos")
-	print(name_game.text)
+	# print(name_game.text)
 	var save_data = {}
-	save_data.text = name_game.text
+	# save_data.text = name_game.text
 	# para recuperar podriamos concatenar usuario y name_game
 	# si voy a recuperar otra información como el nivel, si es un int, necesitaria castearlo, ej:
 	

@@ -42,9 +42,9 @@ text = "Continuar
 
 [node name="back" type="Button" parent="ColorRect/Control/Panel"]
 layout_mode = 2
-offset_left = 66.0
+offset_left = 74.0
 offset_top = 163.0
-offset_right = 122.0
+offset_right = 130.0
 offset_bottom = 194.0
 text = "volver
 "
@@ -56,3 +56,5 @@ offset_top = 23.0
 offset_right = 180.0
 offset_bottom = 46.0
 text = "Name player:"
+
+[connection signal="pressed" from="ColorRect/Control/Panel/continuar" to="." method="_on_continuar_pressed"]

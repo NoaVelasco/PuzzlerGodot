@@ -45,19 +45,11 @@ offset_bottom = 177.0
 text = "cancelar
 "
 
-[node name="TextEdit" type="TextEdit" parent="ColorRect/Control/Panel"]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 34.0
-offset_right = 192.0
-offset_bottom = 105.0
-text = "
-"
-
 [node name="Label" type="Label" parent="ColorRect/Control/Panel"]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 7.0
-offset_right = 98.0
-offset_bottom = 30.0
-text = "partida:"
+offset_left = 52.0
+offset_top = 68.0
+offset_right = 177.0
+offset_bottom = 91.0
+text = "Guardar partida
+"

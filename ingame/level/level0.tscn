@@ -1,8 +1,14 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene load_steps=27 format=3 uid="uid://bkqdm6dt0ft2m"]
 =======
 [gd_scene load_steps=31 format=3 uid="uid://bkqdm6dt0ft2m"]
 >>>>>>> javi
+=======
+
+[gd_scene load_steps=27 format=3 uid="uid://bkqdm6dt0ft2m"]
+
+>>>>>>> 6390dec4d40ce6d182f2e9ec9a827d1c97bac138
 
 [ext_resource type="Script" path="res://ingame/game/game.gd" id="1_alaus"]
 [ext_resource type="PackedScene" uid="uid://rufu4cplqi5e" path="res://ingame/level/level_1.tscn" id="2_rlucc"]
@@ -12,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://32wtnomv4gho" path="res://ingame/player/fall.png" id="4_cpf44"]
 [ext_resource type="Texture2D" uid="uid://gxfm2stasn1u" path="res://ingame/player/wall_hit.png" id="5_rssis"]
 [ext_resource type="Texture2D" uid="uid://cn70g224lgix3" path="res://ingame/player/full.png" id="6_sr7x1"]
+<<<<<<< HEAD
 <<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://biecut6ed81us" path="res://ingame/player/roll_2.png" id="9_2rrfg"]
 =======
@@ -195,6 +202,12 @@ region = Rect2(128, 0, 64, 64)
 atlas = ExtResource("2_y15ne")
 region = Rect2(192, 0, 64, 64)
 >>>>>>> javi
+=======
+
+
+[ext_resource type="Texture2D" uid="uid://biecut6ed81us" path="res://ingame/player/roll_2.png" id="9_2rrfg"]
+
+>>>>>>> 6390dec4d40ce6d182f2e9ec9a827d1c97bac138
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmcpf"]
 atlas = ExtResource("4_cpf44")

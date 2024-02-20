@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var player = $Duck
 
-var movements = []
+var movements: Array = []
 var commands = {"left": Vector2(-64, 0),
 				"right": Vector2(64, 0),
 				"up": Vector2(0, -64),
@@ -29,17 +29,18 @@ func _process(_delta):
 		print(movements)
 	elif Input.is_action_just_pressed("cadena"):
 		len_movs = len(movements)
-		$Player/Timer_moves.start()
+		duckmoves()
 
 
 # Cuando el temporizador termina, ejecuta cada movimiento de la lista y se reinicia
 # hasta que no quedan movimientos. Entonces se resetea.
-func _on_timer_timeout():
-	if index_movs < len_movs:
-		var move = movements[index_movs]
+func duckmoves():
+	while index_movs < len_movs:
+		var move: String = movements[index_movs]
 		player.position += commands[move]
 		index_movs += 1
-		$Player/Timer_moves.start()
-	else:
-		movements = []
-		index_movs = 0
+		await get_tree().create_timer(0.5).timeout
+
+	movements = []
+	len_movs = len(movements)
+	index_movs = 0

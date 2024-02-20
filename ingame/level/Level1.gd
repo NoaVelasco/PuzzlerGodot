@@ -1,10 +1,10 @@
 extends TileMap
 
-#@onready var duck = $"../Duck"
-
+@onready var duck = $"../Duck"
 
 # Called when the node enters the scene tree for the first time.
-#func _ready():
+func _ready():
+	duck.position = Vector2(512, 576)
 	#pass
 	
 

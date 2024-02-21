@@ -19,6 +19,7 @@ func _process(delta):
 	
 func _on_progress_bar_value_changed(value):
 	
+	# prueba para detener la carga de la barra de cargando, no funciona
 	print('en value:  ',value)
 	if value == 25:
 		await get_tree().create_timer(100000.0).timeout

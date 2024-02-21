@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/pause.gd" id="1_iek7r"]
 [ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="2_p7d1w"]
 [ext_resource type="FontFile" uid="uid://3ab1nju8g1l3" path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" id="2_smfl0"]
-[ext_resource type="Script" path="res://scripts/Opciones.gd" id="4_7q3om"]
-[ext_resource type="Script" path="res://scripts/Salir del juego.gd" id="5_5672t"]
+[ext_resource type="Script" path="res://scripts/opciones_button.gd" id="4_7q3om"]
+[ext_resource type="Script" path="res://scripts/exit_game.gd" id="5_5672t"]
 
 [sub_resource type="Theme" id="Theme_ux30y"]
 

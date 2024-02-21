@@ -1,5 +1,7 @@
 extends Control
 
+@export var path = "res://scenes/loading.tscn"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,6 +22,8 @@ func _on_log_in_button_pressed():
 	var password = %Password.text
 	Firebase.Auth.login_with_email_and_password(email, password)
 	%LoginLabel.text = "Logging in"
+	# prueba a redireccionar a la escena loading
+	get_tree().change_scene_to_file(path)
 
 func _on_sign_up_button_pressed():
 	var email = %Email.text
@@ -29,6 +33,7 @@ func _on_sign_up_button_pressed():
 
 
 func on_login_succeeded(auth):
+	# tengo que llevar el nombre a global y mostrarlo en level
 	pass
 	
 func on_signup_succeeded(auth):

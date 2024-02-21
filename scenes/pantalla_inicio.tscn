@@ -74,15 +74,15 @@ process_mode = 3
 script = ExtResource("1_ohpgv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(579, 382.25)
-scale = Vector2(1.125, 0.931902)
+position = Vector2(830.5, 447.25)
+scale = Vector2(1.61621, 1.09141)
 texture = ExtResource("1_rq356")
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 offset_left = -515.0
 offset_top = -411.0
-offset_right = 508.0
-offset_bottom = 554.0
+offset_right = 515.0
+offset_bottom = 414.0
 color = Color(0.215686, 0.215686, 0.215686, 0)
 
 [node name="Control" type="Control" parent="Sprite2D/ColorRect"]

@@ -10,7 +10,7 @@ var motion = Vector2.ZERO
 var playing = Vector2.ZERO
 
 #func _ready():
-	#position = Vector2(160, 544)
+	#position = Vector2(512, 576)
 
 func _physics_process(_delta):
 	# MOVIMIENTOS POR INPUT
@@ -42,6 +42,7 @@ func _physics_process(_delta):
 func update_animation(direction: Vector2):
 	var animation = "idle"
 	if collision:
+		#await animated_sprite.play("hit")
 		animation = "hit"
 		#animated_sprite.animation
 	elif direction.x > 0:
@@ -76,4 +77,9 @@ func play_recorded():
 
 
 func _on_timer_moves_timeout():
-	pass # Replace with function body.
+	#animated_sprite.play("hit")
+	print("timer out")
+
+
+func _on_area_2d_body_entered(_body):
+	get_tree().change_scene_to_file("res://ingame/level/level_3.tscn")

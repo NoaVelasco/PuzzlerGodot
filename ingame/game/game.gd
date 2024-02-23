@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var player = $Duck
+@onready var timer = $Duck/Timer_moves
 
 var movements: Array = []
 var commands = {"left": Vector2(-1, 0),
@@ -43,5 +44,6 @@ func duckmoves():
 			#print(player.position.x)
 		#index_movs += 1
 		await get_tree().create_timer(2.5).timeout
+		#await timer.start()
 
 	movements = []

@@ -1,11 +1,11 @@
 extends TileMap
 
-@onready var duck = $"../Duck"
+@onready var player = $"../ingame/player/Duck"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#duck.position = Vector2(512, 576)
-	pass
+	player.position = Vector2(512, 576)
+	#pass
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

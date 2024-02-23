@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0g1svoc0yf16"]
 
 [ext_resource type="Texture2D" uid="uid://cx4dnlxa7seg5" path="res://ingame/level/sokoban_tilesheet.png" id="1_axevx"]
-[ext_resource type="Script" path="res://ingame/level/Level1.gd" id="2_52oax"]
+[ext_resource type="Script" path="res://_bckps/Level1.gd" id="2_52oax"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nunb2"]
 resource_name = "floor"

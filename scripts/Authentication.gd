@@ -3,6 +3,8 @@ extends Control
 @export var path = "res://scenes/loading.tscn"
 @export var path2 = "res://scenes/perfil.tscn"
 
+var name_player : String
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +15,12 @@ func _ready():
 	%LoginLabel.text = "Logging:"
 	
 	if Firebase.Auth.check_auth_file():
+		var auth = Firebase.Auth.auth
+		print("localid: ")
+		GLOBAL.name_player = auth.email
+		print(auth.email)
+		print(auth.localid)
+		print("fin localid")
 		%LoginLabel.text = "Logged in"
 		get_tree().change_scene_to_file(path)
 	
@@ -47,6 +55,15 @@ func on_login_succeeded(auth):
 	# Para almacenar el usuario logueado y no tener que ingresar siempre las credenciales
 	Firebase.Auth.save_auth(auth)
 	Firebase.Auth.load_auth()
+	
+	# asignar el nombre a global name para mostrar en pantalla:
+
+	name_player = %Email.text
+	GLOBAL.name_player = name_player
+	print("nombre en auth: ")
+	print(%Email.text)
+	print(name_player)
+	print("fin en auth")
 	get_tree().change_scene_to_file(path2)
 	
 func on_signup_succeeded(auth):

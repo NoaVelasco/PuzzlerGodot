@@ -9,23 +9,19 @@ script = ExtResource("1_pydy3")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 1085.0
-offset_right = 1142.0
+offset_left = 992.0
+offset_right = 1279.0
 offset_bottom = 40.0
 
 [node name="NamePlayer" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
 text = "Player: "
 
-[node name="SaveGame" type="Button" parent="HBoxContainer2"]
-layout_mode = 2
-text = "Guardar partida"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 1393.0
+offset_left = 1304.0
 offset_top = 1.0
-offset_right = 1517.0
+offset_right = 1428.0
 offset_bottom = 41.0
 
 [node name="LevelInfo" type="Label" parent="HBoxContainer"]
@@ -43,5 +39,13 @@ alignment = 1
 layout_mode = 2
 text = "Logout"
 
-[connection signal="pressed" from="HBoxContainer2/SaveGame" to="." method="_on_save_game_pressed"]
+[node name="SaveGame" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1431.0
+offset_top = 2.0
+offset_right = 1564.0
+offset_bottom = 37.0
+text = "Guardar partida"
+
 [connection signal="pressed" from="HBoxContainer3/Logout" to="." method="_on_logout_pressed"]
+[connection signal="pressed" from="SaveGame" to="." method="_on_save_game_pressed"]

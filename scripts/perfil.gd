@@ -2,9 +2,14 @@ extends Control
 
 var COLLECTION_ID = "name_game"
 
-var name_player = "Javi"
-var level = "2"
+var name_player : String
+var level = "1"
 var points = "150"
+
+@onready var playerLabel = $HBoxContainer2/NamePlayer
+@onready var levelLabel = $HBoxContainer/LevelInfo
+
+
 
 
 '''
@@ -19,7 +24,10 @@ var points =
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+
+	playerLabel.text = "Player: %s" % GLOBAL.name_player	
+	levelLabel.text = "Level: %s" % level
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,13 +46,18 @@ func _on_save_game_pressed():
 func save_data():
 	# compruebo si el user está autenticado:
 	var auth = Firebase.Auth.auth
-
-	if auth.localId:
+	
+	if auth.localid != "":
+		print("esta autenticado")
+		print(GLOBAL.name_player)
+		# print(auth.email)
+		name_player = GLOBAL.name_player
 		var collection: FirestoreCollection = Firebase.Firestore.collection(COLLECTION_ID)
 		var data: Dictionary = {
 			"name_player" : name_player,
 			"level": level,
 			"points": points
 		}
-		var task: FirestoreTask = collection.update(auth.localId, data)
+		var task: FirestoreTask = collection.update(auth.localid, data)
+
 			

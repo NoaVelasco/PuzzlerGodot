@@ -1,6 +1,7 @@
 extends Control
 
 @export var path = "res://scenes/loading.tscn"
+@export var path2 = "res://scenes/perfil.tscn"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -9,6 +10,11 @@ func _ready():
 	Firebase.Auth.signup_succeeded.connect(on_signup_succeeded)
 	Firebase.Auth.login_failed.connect(on_login_failed)
 	Firebase.Auth.signup_failed.connect(on_signup_failed)
+	%LoginLabel.text = "Logging:"
+	
+	if Firebase.Auth.check_auth_file():
+		%LoginLabel.text = "Logged in"
+		get_tree().change_scene_to_file(path)
 	
 
 
@@ -18,12 +24,14 @@ func _process(delta):
 
 
 func _on_log_in_button_pressed():
+	# % este símbolo es porque al mismo nodo he seleccionado la característica de nombre único
 	var email = %Email.text
 	var password = %Password.text
 	Firebase.Auth.login_with_email_and_password(email, password)
 	%LoginLabel.text = "Logging in"
 	# prueba a redireccionar a la escena loading
-	get_tree().change_scene_to_file(path)
+	
+	
 
 func _on_sign_up_button_pressed():
 	var email = %Email.text
@@ -34,15 +42,30 @@ func _on_sign_up_button_pressed():
 
 func on_login_succeeded(auth):
 	# tengo que llevar el nombre a global y mostrarlo en level
-	pass
+	print(auth)
+	%LoginLabel.text = "Login success!"
+	# Para almacenar el usuario logueado y no tener que ingresar siempre las credenciales
+	Firebase.Auth.save_auth(auth)
+	Firebase.Auth.load_auth()
+	get_tree().change_scene_to_file(path2)
 	
 func on_signup_succeeded(auth):
-	pass
+	print(auth)
+	%LoginLabel.text = "Sign Up Success"
+	
+	Firebase.Auth.save_auth(auth)
+	Firebase.Auth.load_auth()
+	get_tree().change_scene_to_file(path)
 	
 func on_login_failed(error_code, message):
-	pass
+	print(error_code)
+	print(message)
+	%LoginLabel.text = "Login failed. Error: %s" % message
+	
 	
 func on_signup_failed(error_code, message):
-	pass
+	print(error_code)
+	print(message)
+	%LoginLabel.text = "Sign up failed. Error: %s" % message
 	
 	

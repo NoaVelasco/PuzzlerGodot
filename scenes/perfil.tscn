@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://dudo7cgdiube5"]
+
+[ext_resource type="Script" path="res://scripts/perfil.gd" id="1_pydy3"]
+
+[node name="perfil" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pydy3")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 1085.0
+offset_right = 1142.0
+offset_bottom = 40.0
+
+[node name="NamePlayer" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "Player: "
+
+[node name="SaveGame" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+text = "Guardar partida"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1393.0
+offset_top = 1.0
+offset_right = 1517.0
+offset_bottom = 41.0
+
+[node name="LevelInfo" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Level: "
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1544.0
+offset_right = 1663.0
+offset_bottom = 35.0
+alignment = 1
+
+[node name="Logout" type="Button" parent="HBoxContainer3"]
+layout_mode = 2
+text = "Logout"
+
+[connection signal="pressed" from="HBoxContainer2/SaveGame" to="." method="_on_save_game_pressed"]
+[connection signal="pressed" from="HBoxContainer3/Logout" to="." method="_on_logout_pressed"]

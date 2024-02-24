@@ -1,30 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkqdm6dt0ft2m"]
+[gd_scene load_steps=4 format=3 uid="uid://bkqdm6dt0ft2m"]
 
 [ext_resource type="Script" path="res://ingame/game/game.gd" id="1_alaus"]
 [ext_resource type="PackedScene" uid="uid://d0g1svoc0yf16" path="res://ingame/level/level_1.tscn" id="2_rlucc"]
 [ext_resource type="PackedScene" uid="uid://daax07a3srmav" path="res://ingame/player/duck.tscn" id="3_kk8ym"]
-[ext_resource type="Script" path="res://ingame/level/level_1.gd" id="3_x53kr"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_q1k52"]
-radius = 16.1245
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_alaus")
 
 [node name="Level1" parent="." instance=ExtResource("2_rlucc")]
-script = ExtResource("3_x53kr")
 
 [node name="Duck" parent="." instance=ExtResource("3_kk8ym")]
 position = Vector2(-73, -87)
 metadata/_edit_group_ = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AnimatedSprite2D" parent="Duck" index="0"]
+animation = &"idle"
+frame_progress = 0.379119
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1376, 288)
-shape = SubResource("CircleShape2D_q1k52")
+[connection signal="body_entered" from="Level1/Area2D" to="Duck" method="_on_area_2d_body_entered"]
 
-[connection signal="timeout" from="Duck/Timer_moves" to="Duck" method="_on_timer_moves_timeout"]
-[connection signal="body_entered" from="Area2D" to="Duck" method="_on_area_2d_body_entered"]
-
+[editable path="Level1"]
 [editable path="Duck"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://daax07a3srmav"]
+[gd_scene load_steps=28 format=3 uid="uid://daax07a3srmav"]
 
 [ext_resource type="Script" path="res://ingame/player/duck.gd" id="1_jjl6g"]
 [ext_resource type="Texture2D" uid="uid://32wtnomv4gho" path="res://ingame/player/fall.png" id="2_2ijk3"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b2yr8axwcwym1" path="res://ingame/player/idle.png" id="5_ca03v"]
 [ext_resource type="Texture2D" uid="uid://biecut6ed81us" path="res://ingame/player/roll_2.png" id="6_j1uf5"]
 [ext_resource type="Texture2D" uid="uid://cyo2vw3wcbeoi" path="res://ingame/player/roll_1.png" id="7_8eu6s"]
+[ext_resource type="AudioStream" uid="uid://bbmtsqfy0varh" path="res://assets/roll_2.wav" id="8_a3d6x"]
+[ext_resource type="AudioStream" uid="uid://cvwlgqwtnsxpf" path="res://assets/hit_retro.wav" id="9_6h5wf"]
+[ext_resource type="AudioStream" uid="uid://bwgahgfyj2f6y" path="res://assets/Coin_7.wav" id="10_3j1m8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmcpf"]
 atlas = ExtResource("2_2ijk3")
@@ -74,15 +77,21 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tmcpf")
 }, {
-"duration": 2.0,
+"duration": 6.0,
 "texture": SubResource("AtlasTexture_1jfdo")
 }, {
-"duration": 0.2,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0xhqg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmcpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpe04")
 }],
 "loop": false,
 "name": &"hit",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -151,13 +160,18 @@ script = ExtResource("1_jjl6g")
 position = Vector2(32, 32)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_agga2")
-animation = &"idle"
+animation = &"hit"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(31, 33)
 shape = SubResource("RectangleShape2D_nwp1l")
 
-[node name="Timer_moves" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
+[node name="Rolling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_a3d6x")
+
+[node name="Stopping" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_6h5wf")
+
+[node name="Coin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_3j1m8")

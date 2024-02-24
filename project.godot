@@ -28,7 +28,10 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
+
 enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg")
+
 
 [input]
 

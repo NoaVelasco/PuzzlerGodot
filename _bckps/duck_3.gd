@@ -12,7 +12,7 @@ var playing = Vector2.ZERO
 #func _ready():
 	#position = Vector2(160, 544)
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	# MOVIMIENTOS POR INPUT
 	#motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	#motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
@@ -20,23 +20,23 @@ func _physics_process(_delta):
 	#motion = Input.get_vector("move_left","move_right", "move_up", "move_down")
 	
 	# ----MOV UNTIL COLLIDE-------- 
-	if playing:
-		motion = playing
+
+	if Input.is_action_just_pressed("print"):
+		motion = Vector2.RIGHT
 		if mask_is_centered == true:
 			moving_collider.position += motion * 5
 			mask_is_centered = false
-	if collision:
+	elif collision:
 		motion = Vector2.ZERO
-		playing = Vector2.ZERO
 		moving_collider.position = animated_sprite.position
 		mask_is_centered = true
-		$Timer_moves.start()
 
 	velocity = motion * move_speed
 	collision = move_and_slide()
 	update_animation(motion)
 	# ------------
 	
+
 
 
 func update_animation(direction: Vector2):
@@ -57,21 +57,6 @@ func update_animation(direction: Vector2):
 		
 	if animated_sprite.animation != animation:
 		animated_sprite.play(animation)
-
-func play_recorded():
-	if collision == true:
-		#playing = true
-		motion = Vector2(0, 0)
-		#if mask_is_centered == true:
-			#moving_collider.position += motion * 5
-			#mask_is_centered = false
-	else:
-		#print(collision)
-		#playing = false
-		motion = Vector2(10,0)
-		#moving_collider.position = animated_sprite.position
-		#mask_is_centered = true
-		#play = false
 
 
 

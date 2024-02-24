@@ -1,5 +1,7 @@
 extends Control
 
+# Probar a cambiar el timer
+
 @onready var progress : Array
 var scene_load_status : int
 

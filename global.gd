@@ -7,6 +7,9 @@ var change_scene = "res://ingame/level/level_1.tscn"
 var name_player : String
 var score : int
 
+var pause : bool
+
+
 # Movimiento del jugador
 var axis : Vector2
 

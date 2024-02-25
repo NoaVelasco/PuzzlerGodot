@@ -87,6 +87,6 @@ func update_animation(direction: Vector2):
 	#else:
 		#motion = Vector2(10,0)
 
-func _on_area_2d_body_entered(_body):
-	coin_snd.play()
+#func _on_area_2d_body_entered(_body):
+	#coin_snd.play()
 	#get_tree().change_scene_to_file("res://ingame/level/level_3.tscn")

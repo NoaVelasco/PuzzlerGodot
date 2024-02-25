@@ -148,7 +148,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwp1l"]
 size = Vector2(50, 54)
 
-[node name="Duck" type="CharacterBody2D"]
+[node name="Duck" type="CharacterBody2D" groups=["Player"]]
 texture_filter = 1
 position = Vector2(512, 256)
 collision_mask = 3
@@ -160,7 +160,7 @@ script = ExtResource("1_jjl6g")
 position = Vector2(32, 32)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_agga2")
-animation = &"hit"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

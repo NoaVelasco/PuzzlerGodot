@@ -33,3 +33,11 @@ El juego contará con pantalla de inicio, menú de opciones, selección de nivel
 
 **Base de datos**
 - Google Firestore
+
+
+
+## Recursos
+- Música: [Joel Francis Burford](https://joelfrancisburford.itch.io/)
+- Sprites:
+	- [DevHive](https://devhive.itch.io/)
+	- [Kenney](https://www.kenney.nl/)

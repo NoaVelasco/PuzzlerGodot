@@ -1,7 +1,8 @@
 extends Control
 
 @export var path = "res://scenes/loading.tscn"
-@export var path2 = "res://scenes/perfil.tscn"
+# @export var path2 = "res://scenes/perfil.tscn"
+@export var path2 = "res://ingame/level/level0.tscn"
 
 var name_player : String
 

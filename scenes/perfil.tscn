@@ -1,51 +1,76 @@
-[gd_scene load_steps=2 format=3 uid="uid://dudo7cgdiube5"]
+[gd_scene load_steps=3 format=3 uid="uid://dudo7cgdiube5"]
 
 [ext_resource type="Script" path="res://scripts/perfil.gd" id="1_pydy3"]
+[ext_resource type="FontFile" uid="uid://dsxw7olfx76bi" path="res://fonts/connection_ii/ConnectionII.otf" id="2_2tlqc"]
 
 [node name="perfil" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_pydy3")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+[node name="SaveGame" type="Button" parent="."]
 layout_mode = 2
-offset_left = 992.0
-offset_right = 1279.0
-offset_bottom = 40.0
+offset_left = 1425.0
+offset_top = 152.0
+offset_right = 1558.0
+offset_bottom = 187.0
+text = "Guardar partida"
 
-[node name="NamePlayer" type="Label" parent="HBoxContainer2"]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 5.0
+offset_right = 1656.0
+offset_bottom = 69.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel"]
 layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -284.0
+offset_bottom = -17.0
+
+[node name="NamePlayer" type="Label" parent="Panel/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2tlqc")
+theme_override_font_sizes/font_size = 25
 text = "Player: "
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 1304.0
-offset_top = 1.0
-offset_right = 1428.0
-offset_bottom = 41.0
+offset_left = 347.0
+offset_top = 8.0
+offset_right = 495.0
+offset_bottom = 48.0
 
-[node name="LevelInfo" type="Label" parent="HBoxContainer"]
+[node name="LevelInfo" type="Label" parent="Panel/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2tlqc")
+theme_override_font_sizes/font_size = 25
 text = "Level: "
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 1544.0
-offset_right = 1663.0
-offset_bottom = 35.0
+[node name="Level" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2tlqc")
+theme_override_font_sizes/font_size = 25
+text = "          "
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.687
+anchor_right = -1.687
+offset_left = 1412.19
+offset_top = 240.0
+offset_right = 1531.19
+offset_bottom = 275.0
 alignment = 1
 
-[node name="Logout" type="Button" parent="HBoxContainer3"]
+[node name="Logout" type="Button" parent="Panel/HBoxContainer3"]
 layout_mode = 2
 text = "Logout"
 
-[node name="SaveGame" type="Button" parent="."]
-layout_mode = 2
-offset_left = 1431.0
-offset_top = 2.0
-offset_right = 1564.0
-offset_bottom = 37.0
-text = "Guardar partida"
-
-[connection signal="pressed" from="HBoxContainer3/Logout" to="." method="_on_logout_pressed"]
 [connection signal="pressed" from="SaveGame" to="." method="_on_save_game_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer3/Logout" to="." method="_on_logout_pressed"]

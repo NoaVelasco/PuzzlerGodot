@@ -3,11 +3,11 @@ extends Control
 var COLLECTION_ID = "name_game"
 
 var name_player : String
-var level = "1"
+var num_level : String = "4"
 var points = "150"
 
-@onready var playerLabel = $HBoxContainer2/NamePlayer
-@onready var levelLabel = $HBoxContainer/LevelInfo
+@onready var playerLabel = $Panel/HBoxContainer2/NamePlayer
+@onready var level = $Panel/HBoxContainer/Level
 
 
 
@@ -26,7 +26,7 @@ var points =
 func _ready():
 
 	playerLabel.text = "Player: %s" % GLOBAL.name_player	
-	levelLabel.text = "Level: %s" % level
+	level.text = "%s" % num_level
 	
 
 

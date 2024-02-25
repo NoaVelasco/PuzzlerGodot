@@ -8,6 +8,7 @@ var name_player : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	%Email.grab_focus()
 	Firebase.Auth.login_succeeded.connect(on_login_succeeded)
 	Firebase.Auth.signup_succeeded.connect(on_signup_succeeded)
 	Firebase.Auth.login_failed.connect(on_login_failed)
@@ -36,7 +37,7 @@ func _on_log_in_button_pressed():
 	var email = %Email.text
 	var password = %Password.text
 	Firebase.Auth.login_with_email_and_password(email, password)
-	%LoginLabel.text = "Logging in"
+	%LoginLabel.text = "Logging in..."
 	# prueba a redireccionar a la escena loading
 	
 	
@@ -45,7 +46,7 @@ func _on_sign_up_button_pressed():
 	var email = %Email.text
 	var password = %Password.text
 	Firebase.Auth.signup_with_email_and_password(email, password)
-	%LoginLabel.text = "Signing up"
+	%LoginLabel.text = "Signing up..."
 
 
 func on_login_succeeded(auth):
@@ -77,12 +78,12 @@ func on_signup_succeeded(auth):
 func on_login_failed(error_code, message):
 	print(error_code)
 	print(message)
-	%LoginLabel.text = "Login failed. Error: %s" % message
+	%LoginLabel.text = "Login failed: %s" % message
 	
 	
 func on_signup_failed(error_code, message):
 	print(error_code)
 	print(message)
-	%LoginLabel.text = "Sign up failed. Error: %s" % message
+	%LoginLabel.text = "Sign up failed: %s" % message
 	
 	

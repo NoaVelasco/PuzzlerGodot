@@ -82,10 +82,10 @@ color = Color(0.156863, 0.156863, 0.156863, 0.443137)
 [node name="Control" type="Control" parent="ColorRect"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 212.778
-offset_top = 204.883
-offset_right = 810.778
-offset_bottom = 633.883
+offset_left = 573.0
+offset_top = 303.0
+offset_right = 1171.0
+offset_bottom = 732.0
 
 [node name="Label" type="Label" parent="ColorRect/Control"]
 layout_mode = 0
@@ -153,10 +153,10 @@ script = ExtResource("5_5672t")
 [node name="Label" type="Label" parent="."]
 process_mode = 3
 visible = false
-offset_left = 444.0
-offset_top = 72.0
-offset_right = 916.0
-offset_bottom = 176.0
+offset_left = 763.0
+offset_top = 215.0
+offset_right = 1235.0
+offset_bottom = 319.0
 theme_override_fonts/font = ExtResource("2_p7d1w")
 theme_override_font_sizes/font_size = 50
 text = "PAUSE"

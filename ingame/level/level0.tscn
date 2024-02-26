@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bkqdm6dt0ft2m"]
+[gd_scene load_steps=18 format=3 uid="uid://bkqdm6dt0ft2m"]
 
 [ext_resource type="Script" path="res://ingame/game/game.gd" id="1_alaus"]
 [ext_resource type="PackedScene" uid="uid://d0g1svoc0yf16" path="res://ingame/level/level_1.tscn" id="2_rlucc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://h2myejbpy35k" path="res://assets/UI/movil/WideSlider_Orange_Frame.svg" id="5_ahe4k"]
 [ext_resource type="Texture2D" uid="uid://d3fkoihbjvqy5" path="res://assets/UI/robin/Default.png" id="5_fym6e"]
 [ext_resource type="Texture2D" uid="uid://xrcbx6cn7ue6" path="res://assets/UI/robin/Icon/ArrowRight-Thin.png" id="6_8u0mc"]
+[ext_resource type="Texture2D" uid="uid://bs3pcoorjvp0v" path="res://assets/UI/UI ICONS_WHITE_pixel art_Sprite Sheet.png" id="7_nnx5j"]
 [ext_resource type="FontFile" uid="uid://c3i8kg843bt7x" path="res://fonts/NotoSansSymbols2-Regular.ttf" id="7_q4v18"]
 [ext_resource type="Texture2D" uid="uid://bsv14vdbfi0jt" path="res://assets/UI/movil/WideSlider_Orange_Background.svg" id="7_qwpqg"]
 [ext_resource type="Texture2D" uid="uid://csvaf60r0rbw1" path="res://assets/UI/movil/r_Icon_Small_Blank_Arrow.png" id="8_6by0d"]
@@ -124,6 +125,45 @@ text = "⬅
 label_settings = SubResource("LabelSettings_nqlq0")
 horizontal_alignment = 1
 
+[node name="UiIconsWhitePixelArtSpriteSheet" type="Sprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(36, 76)
+scale = Vector2(0.483051, 0.483051)
+texture = ExtResource("7_nnx5j")
+region_enabled = true
+region_rect = Rect2(772.113, 1029.12, 118.708, 118.708)
+
+[node name="UiIconsWhitePixelArtSpriteSheet2" type="Sprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(95, 76)
+rotation = -1.57079
+scale = Vector2(0.483051, 0.483051)
+texture = ExtResource("7_nnx5j")
+region_enabled = true
+region_rect = Rect2(772.113, 1029.12, 118.708, 118.708)
+
+[node name="UiIconsWhitePixelArtSpriteSheet4" type="Sprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(95, 18)
+rotation = 1.57079
+scale = Vector2(0.483051, 0.483051)
+texture = ExtResource("7_nnx5j")
+region_enabled = true
+region_rect = Rect2(772.113, 1029.12, 118.708, 118.708)
+
+[node name="UiIconsWhitePixelArtSpriteSheet5" type="Sprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(95, 18)
+rotation = 1.57079
+scale = Vector2(0.483051, 0.483051)
+texture = ExtResource("7_nnx5j")
+region_enabled = true
+region_rect = Rect2(772.113, 1029.12, 118.708, 118.708)
+
+[node name="UiIconsWhitePixelArtSpriteSheet3" type="Sprite2D" parent="CanvasLayer/Panel"]
+position = Vector2(155, 76)
+rotation = -3.14159
+scale = Vector2(0.483051, 0.483051)
+texture = ExtResource("7_nnx5j")
+region_enabled = true
+region_rect = Rect2(772.113, 1029.12, 118.708, 118.708)
+
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
 offset_left = 295.519
@@ -170,6 +210,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 4
 anchor_top = 0.5

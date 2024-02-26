@@ -74,7 +74,7 @@ func on_signup_succeeded(auth):
 	
 	Firebase.Auth.save_auth(auth)
 	Firebase.Auth.load_auth()
-	get_tree().change_scene_to_file(path)
+	# get_tree().change_scene_to_file(path)
 	
 func on_login_failed(error_code, message):
 	print(error_code)

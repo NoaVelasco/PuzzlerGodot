@@ -7,12 +7,14 @@ extends CharacterBody2D
 @onready var coin_snd = $Coin
 
 signal wall_collision
+
 var move_speed: int = 400
 var mask_is_centered = true
 var collision = false
 var hitting = false
 var motion = Vector2.ZERO
 var playing = Vector2.ZERO
+var win_con = false
 
 #func _ready():
 	#position = Vector2(512, 576)
@@ -22,22 +24,25 @@ func _physics_process(_delta):
 	if playing:
 		motion = playing
 		if mask_is_centered == true:
+			# Su máscara de colisión se adelanta para comprobar choques.
 			moving_collider.position += motion * 5
 			mask_is_centered = false
 
 	velocity = motion * move_speed
 	collision = move_and_slide()
 
-	if collision:  # Y si creo una función para todo lo que ocurre aquí y monto el await "hit"?
+	if collision:
 		hitting_process()
-	elif !hitting:
+	elif not hitting:
 		update_animation(motion)
 	# ------------
 
-	if Input.is_action_just_pressed("testing"):
-		await hit_by_button()
-	
+	#if Input.is_action_just_pressed("testing"):
+		#await hit_by_button()
+
+
 func hitting_process():
+	'''Si choca, para y recupera su máscara de colisión.'''
 	motion = Vector2.ZERO
 	playing = Vector2.ZERO
 	moving_collider.position = animated_sprite.position
@@ -45,15 +50,9 @@ func hitting_process():
 	hitting = true
 	hit_in_wall()
 
-	
-func hit_by_button():
-	hitting = true
-	animated_sprite.play("hit")
-	await animated_sprite.animation_finished
-	print("ouch!")
-	hitting = false
-	
+
 func hit_in_wall():
+	'''Cuando choca, animación y señal para pasar al siguiente movimiento.'''
 	stopping_snd.play()
 	animated_sprite.play("hit")
 	await animated_sprite.animation_finished
@@ -61,11 +60,11 @@ func hit_in_wall():
 	wall_collision.emit()
 
 
-
 func update_animation(direction: Vector2):
+	'''Las animaciones según se mueva hacia los lados.'''
 	var animation = "idle"
 	if direction:
-		if !rolling_snd.playing:
+		if not rolling_snd.playing:
 			rolling_snd.play()
 		if direction.x > 0:
 			animated_sprite.flip_h = false
@@ -80,6 +79,15 @@ func update_animation(direction: Vector2):
 		
 	if animated_sprite.animation != animation:
 		animated_sprite.play(animation)
+
+
+#func hit_by_button():
+	#'''Una prueba. Recrear colisión mediante tecla Backspace.'''
+	#hitting = true
+	#animated_sprite.play("hit")
+	#await animated_sprite.animation_finished
+	#print("ouch!")
+	#hitting = false
 
 #func play_recorded():
 	#if collision == true:

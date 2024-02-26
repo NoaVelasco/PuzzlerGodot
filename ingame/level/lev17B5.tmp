@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bkqdm6dt0ft2m"]
+[gd_scene load_steps=15 format=3 uid="uid://bkqdm6dt0ft2m"]
 
 [ext_resource type="Script" path="res://ingame/game/game.gd" id="1_alaus"]
 [ext_resource type="PackedScene" uid="uid://d0g1svoc0yf16" path="res://ingame/level/level_1.tscn" id="2_rlucc"]
@@ -12,8 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://csvaf60r0rbw1" path="res://assets/UI/movil/r_Icon_Small_Blank_Arrow.png" id="8_6by0d"]
 [ext_resource type="Texture2D" uid="uid://do1xrupcsekxj" path="res://assets/UI/movil/l_Icon_Small_Blank_Arrow.png" id="9_rqnoh"]
 [ext_resource type="Texture2D" uid="uid://ekb561boots5" path="res://assets/UI/movil/u_Icon_Small_Blank_Arrow.png" id="10_st5p6"]
-[ext_resource type="AudioStream" uid="uid://bb1qy5xijywuc" path="res://assets/win.wav" id="13_x6xqu"]
-[ext_resource type="AudioStream" uid="uid://do8jkx34ddx0d" path="res://assets/fail.wav" id="14_itiap"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w2kcb"]
 line_spacing = -19.0
@@ -61,7 +59,7 @@ offset_top = 109.0
 offset_right = 1583.0
 offset_bottom = 309.0
 rotation = 1.57079
-scale = Vector2(0.471539, 0.554711)
+scale = Vector2(0.457086, 0.55471)
 texture = ExtResource("7_qwpqg")
 expand_mode = 3
 
@@ -72,7 +70,7 @@ offset_top = 106.0
 offset_right = 1591.0
 offset_bottom = 306.0
 rotation = 1.57079
-scale = Vector2(0.475351, 0.639342)
+scale = Vector2(0.460846, 0.639342)
 texture = ExtResource("5_ahe4k")
 expand_mode = 3
 
@@ -170,6 +168,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 4
 anchor_top = 0.5
@@ -179,7 +178,6 @@ scale = Vector2(0.790159, 0.790159)
 size_flags_horizontal = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-visible = false
 layout_mode = 1
 offset_right = 992.0
 offset_bottom = 896.0
@@ -239,12 +237,6 @@ texture = ExtResource("5_fym6e")
 position = Vector2(126, 800.5)
 scale = Vector2(0.845238, 0.845238)
 texture = ExtResource("5_fym6e")
-
-[node name="Win_snd" type="AudioStreamPlayer" parent="Control"]
-stream = ExtResource("13_x6xqu")
-
-[node name="Fail_snd" type="AudioStreamPlayer" parent="Control"]
-stream = ExtResource("14_itiap")
 
 [connection signal="body_entered" from="Level1/Area2D" to="Duck" method="_on_area_2d_body_entered"]
 

@@ -1,5 +1,6 @@
 extends Node2D
 
+
 @onready var player = $Duck
 @onready var ui = $UI_movement
 @onready var label = $UI_movement/UI_Flechas
@@ -66,9 +67,12 @@ func check_win_con():
 	if player.win_con:
 		win_snd.play()
 		await win_snd.finished
-		get_tree().change_scene_to_file("res://ingame/level/level_3.tscn")
+		get_tree().change_scene_to_file("res://ingame/level/Lvl_1.tscn")
 	else:
 		fail_snd.play()
 
 
-# Necesito conectar con ui.begin():
+func _on_button_pressed():
+	if waiting_state:
+		duckmoves()
+

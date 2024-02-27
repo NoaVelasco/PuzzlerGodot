@@ -149,6 +149,8 @@ animations = [{
 size = Vector2(50, 54)
 
 [node name="Duck" type="CharacterBody2D" groups=["Player"]]
+process_priority = 1
+visibility_layer = 2
 texture_filter = 1
 position = Vector2(512, 256)
 collision_mask = 3

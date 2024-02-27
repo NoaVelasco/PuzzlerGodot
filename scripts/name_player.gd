@@ -3,6 +3,7 @@ extends Node2D
 const SAVE_FILE_PATH = "user://game_save.save"
 
 # como va a ser la primera partida, va a ir al loading inicial
+@export var path_inicio = "res://scenes/pantalla_inicio.tscn"
 @export var path = "res://scenes/loading.tscn"
 
 @onready var continue_button = $ColorRect/Control/Panel/continuar
@@ -58,9 +59,10 @@ func start_game():
 	
 	
 func back():
+	get_tree().change_scene_to_file(path_inicio)
 	# Como hago el regreeso? como pausa o como una nueva redirección.
 	# una nueva redirección iria a la escena desde inicio
-	pass
+
 	
 
 

@@ -45,10 +45,10 @@ secret = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 2
-offset_left = 723.0
-offset_top = 495.0
-offset_right = 1011.0
-offset_bottom = 636.0
+offset_left = 719.0
+offset_top = 554.0
+offset_right = 1007.0
+offset_bottom = 695.0
 
 [node name="LogInButton" type="Button" parent="ColorRect/VBoxContainer2"]
 layout_mode = 2
@@ -66,9 +66,9 @@ text = "Sing up
 unique_name_in_owner = true
 layout_mode = 2
 offset_left = 473.0
-offset_top = 275.0
+offset_top = 255.0
 offset_right = 1248.0
-offset_bottom = 324.0
+offset_bottom = 304.0
 theme_override_fonts/font = ExtResource("2_12ogq")
 theme_override_font_sizes/font_size = 30
 text = "Login"

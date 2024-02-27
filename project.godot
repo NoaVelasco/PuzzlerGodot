@@ -24,6 +24,7 @@ Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 
 window/size/viewport_width=1664
 window/size/viewport_height=896
+window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 
 [editor_plugins]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://0nf5g3i058iq"]
+[gd_scene load_steps=3 format=3 uid="uid://0nf5g3i058iq"]
 
 [ext_resource type="Script" path="res://scripts/name_player.gd" id="1_vv7ui"]
+[ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="2_kyv8e"]
 
 [node name="name_player" type="Node2D"]
 script = ExtResource("1_vv7ui")
@@ -19,42 +20,49 @@ offset_bottom = 614.0
 
 [node name="Panel" type="Panel" parent="ColorRect/Control"]
 layout_mode = 0
-offset_left = 46.0
+offset_left = -48.0
 offset_top = 41.0
-offset_right = 303.0
-offset_bottom = 315.0
+offset_right = 398.0
+offset_bottom = 372.0
 
-[node name="name_player" type="TextEdit" parent="ColorRect/Control/Panel"]
-layout_mode = 2
-offset_left = 57.0
-offset_top = 59.0
-offset_right = 208.0
-offset_bottom = 93.0
+[node name="name_player" type="LineEdit" parent="ColorRect/Control/Panel"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 91.0
+offset_right = 364.0
+offset_bottom = 141.0
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Player"
+max_length = 15
 
 [node name="continuar" type="Button" parent="ColorRect/Control/Panel"]
 layout_mode = 2
-offset_left = 73.0
-offset_top = 126.0
-offset_right = 189.0
-offset_bottom = 164.0
+offset_left = 62.0
+offset_top = 226.0
+offset_right = 178.0
+offset_bottom = 264.0
+theme_override_font_sizes/font_size = 25
 text = "Continuar
 "
 
 [node name="back" type="Button" parent="ColorRect/Control/Panel"]
 layout_mode = 2
-offset_left = 108.0
-offset_top = 183.0
-offset_right = 164.0
-offset_bottom = 214.0
-text = "volver
+offset_left = 247.0
+offset_top = 228.0
+offset_right = 366.0
+offset_bottom = 271.0
+theme_override_font_sizes/font_size = 25
+text = "Cancelar
 "
 
 [node name="Label" type="Label" parent="ColorRect/Control/Panel"]
 layout_mode = 0
-offset_left = 55.0
-offset_top = 23.0
-offset_right = 210.0
-offset_bottom = 46.0
-text = "Name player:"
+offset_left = 66.0
+offset_top = 36.0
+offset_right = 221.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("2_kyv8e")
+theme_override_font_sizes/font_size = 30
+text = "Name:"
 
 [connection signal="pressed" from="ColorRect/Control/Panel/continuar" to="." method="_on_continuar_pressed"]

@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var player = $Duck
-@onready var ui = $UI_movement
 @onready var label = $UI_movement/UI_Flechas
 @onready var label_shdw = $UI_movement/UI_Flechas_shdw
 @onready var win_snd = $Control/Win_snd
@@ -71,4 +70,6 @@ func check_win_con():
 		fail_snd.play()
 
 
-# Necesito conectar con ui.begin():
+func _on_button_pressed():
+	if waiting_state:
+		duckmoves()

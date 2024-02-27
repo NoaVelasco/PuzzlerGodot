@@ -1,10 +1,5 @@
 extends Node2D
 
-'''
-Es aqui donde tengo que aplicar la lógica de save player
-'''
-
-
 @onready var popup = $Window
 @onready var save_button = $Window/ColorRect/Control/Panel/Save
 

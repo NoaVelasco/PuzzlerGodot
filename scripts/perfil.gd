@@ -28,6 +28,8 @@ var points =
 func _ready():
 	# load_data()
 	# Aqui recupero los valores para mostrar en la pantalla actual del nivel
+	
+	
 	playerLabel.text = "Player: %s" % GLOBAL.name_player	
 	level.text = "%s" % num_level
 	

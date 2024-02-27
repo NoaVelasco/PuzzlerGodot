@@ -1,8 +1,7 @@
 extends Control
 
-# Deberia ser por ejemplo: "games"
-var COLLECTION_ID = "name_game"
 
+var COLLECTION_ID = "games"
 
 var name_player : String
 var num_level : String = "4"

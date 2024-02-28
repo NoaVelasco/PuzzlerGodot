@@ -29,6 +29,7 @@ process_mode = 3
 script = ExtResource("1_mwd0w")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [node name="Window" type="Window" parent="."]
 title = "Guardar partida"
@@ -64,7 +65,7 @@ offset_right = 159.0
 offset_bottom = 217.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_11svw")
-text = "guardar
+text = "Si (Y)
 "
 
 [node name="Back" type="Button" parent="Window/ColorRect/Control/Panel"]
@@ -75,7 +76,7 @@ offset_right = 315.0
 offset_bottom = 218.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_76k6g")
-text = "cancelar
+text = "No (X)
 "
 
 [node name="Label" type="Label" parent="Window/ColorRect/Control/Panel"]

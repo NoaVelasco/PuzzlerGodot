@@ -8,8 +8,7 @@ Es aqui donde tengo que aplicar la lógica de save player
 var COLLECTION_ID = "games"
 
 var name_player : String
-var num_level : String = "4"
-var points = "150"
+var num_level : String = "2"
 
 
 @onready var popup = $Window
@@ -17,20 +16,35 @@ var points = "150"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#get_tree().paused = true
 	save_button.grab_focus()
-	popup.show()
+	popup.hide()
+	
+	
+func _process(delta):
+	if Input.is_action_just_pressed("yes"):
+		
+		# Pausa debe dejar mover el menú
+		print("guardamos partida, hay que llamar a save ")
+		get_tree().paused = true
+		save_data()
+		# save_game()
+		
+	if Input.is_action_just_pressed("No"):
+		# Pausa debe dejar mover el menú
+		print("cerramos ventana guardar")
+		get_tree().paused = false
+		popup.hide()
+		
 
 func _on_window_close_requested():
 	popup.hide()
 
-
-func _on_back_pressed():
-	popup.hide()
-	print("volver a options")
-	get_tree().change_scene_to_file("res://scenes/options.tscn")
-
+'''
 func _on_save_pressed():
 	save_data()
+
+'''
 	
 
 func save_data():
@@ -39,15 +53,19 @@ func save_data():
 	
 	if auth.localid != "":
 		print("esta autenticado")
+		print(GLOBAL.name_player.split("@")[0])
 		print(GLOBAL.name_player)
 		# print(auth.email)
-		name_player = GLOBAL.name_player
+		name_player = GLOBAL.name_player.split("@")[0]
 		var collection: FirestoreCollection = Firebase.Firestore.collection(COLLECTION_ID)
 		
 		# Valores que voy a guardar
 		var data: Dictionary = {
 			"name_player" : name_player,
-			"level": num_level,
-			"points": points
+			"level": num_level
 		}
 		var task: FirestoreTask = collection.update(auth.localid, data)
+		
+	print("has guardado")
+	get_tree().paused = false
+	popup.hide()

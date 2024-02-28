@@ -74,5 +74,16 @@ theme_override_font_sizes/font_size = 30
 text = "Login"
 horizontal_alignment = 1
 
+[node name="Salir" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1500.0
+offset_top = 33.0
+offset_right = 1622.0
+offset_bottom = 116.0
+theme_override_fonts/font = ExtResource("2_k8jov")
+theme_override_font_sizes/font_size = 25
+text = "Exit"
+
 [connection signal="pressed" from="ColorRect/VBoxContainer2/LogInButton" to="." method="_on_log_in_button_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer2/SignUpButton" to="." method="_on_sign_up_button_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]

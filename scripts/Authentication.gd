@@ -2,7 +2,7 @@ extends Control
 
 @export var path = "res://scenes/loading.tscn"
 # @export var path2 = "res://scenes/perfil.tscn"
-@export var path2 = "res://ingame/level/level0.tscn"
+@export var path2 = "res://scenes/load_game.tscn"
 
 var name_player : String
 
@@ -88,3 +88,7 @@ func on_signup_failed(error_code, message):
 	%LoginLabel.text = "Sign up failed: %s" % message
 	
 	
+
+
+func _on_salir_pressed():
+	get_tree().change_scene_to_file("res://scenes/pantalla_inicio.tscn")

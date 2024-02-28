@@ -4,6 +4,8 @@ extends Node2D
 
 @onready var pause = preload("res://scenes/pause.tscn")
 @onready var menu = preload("res://scenes/options.tscn")
+@onready var menu_save = preload("res://scenes/saveGame.tscn")
+
 
 
 
@@ -18,9 +20,11 @@ var commands = {"left": Vector2(-1, 0),
 func _ready():
 	var instance_pause = pause.instantiate()
 	var instance_menu = menu.instantiate()
+	var instance_menu_save = menu_save.instantiate()
 	
 	add_child(instance_pause)
 	add_child(instance_menu)
+	add_child(instance_menu_save)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

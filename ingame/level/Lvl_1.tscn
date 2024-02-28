@@ -13,9 +13,6 @@ script = ExtResource("1_lgmqq")
 [node name="Level1" parent="." instance=ExtResource("2_n3use")]
 metadata/_edit_lock_ = true
 
-[node name="Window01" parent="Level1" index="1"]
-position = Vector2i(304, 176)
-
 [node name="Duck" parent="." instance=ExtResource("3_t2fl6")]
 position = Vector2(-73, -87)
 metadata/_edit_group_ = true
@@ -24,6 +21,12 @@ metadata/_edit_group_ = true
 frame_progress = 0.379119
 
 [node name="UI_movement" parent="." instance=ExtResource("4_ntpfk")]
+
+[node name="UI_Flechas_shdw" parent="UI_movement" index="3"]
+text = ""
+
+[node name="UI_Flechas" parent="UI_movement" index="4"]
+text = ""
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

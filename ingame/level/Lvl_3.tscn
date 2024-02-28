@@ -21,6 +21,12 @@ frame_progress = 0.379119
 
 [node name="UI_movement" parent="." instance=ExtResource("4_70v4e")]
 
+[node name="UI_Flechas_shdw" parent="UI_movement" index="3"]
+text = ""
+
+[node name="UI_Flechas" parent="UI_movement" index="4"]
+text = ""
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 4

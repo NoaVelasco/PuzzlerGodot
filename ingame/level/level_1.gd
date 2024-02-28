@@ -8,14 +8,12 @@ extends TileMap
 func _ready():
 	player.position = Vector2(512, 576)
 
+func _on_window_01_close_requested():
+	popup.hide()
 
-func _on_area_2d_body_entered(body):
+func _obtains_coin_1(body):
 	'''Si el player logra llegar, es condición de victoria.'''
 	if body.is_in_group("Player"):
 		body.coin_snd.play()
 		await body.coin_snd.finished
 		body.win_con = true
-
-
-func _on_window_01_close_requested():
-	popup.hide()

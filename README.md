@@ -1,6 +1,6 @@
-# Puzzler Godot
+# Gozzler
 
-## Qué es Puzzler Godot
+## Qué es Gozzler
 Puzzler Godot es un juego 2D de resolución de puzles con una mecánica basada en la programación de movimientos. 
 
 ### Etiquetas
@@ -26,7 +26,7 @@ El juego contará con pantalla de inicio, menú de opciones, selección de nivel
 - Godot==4.2
 
 **Lenguaje de programación**
-- GDScript
+- GDScript==2.0
 
 **Control de versiones**
 - Git==2.43.0.windows.1
@@ -36,7 +36,8 @@ El juego contará con pantalla de inicio, menú de opciones, selección de nivel
 
 
 
-## Recursos
+## Recursos y créditos
+- Creadores: Noa Velasco y Javier… @TODO
 - Música: [Joel Francis Burford](https://joelfrancisburford.itch.io/)
 - Sprites:
 	- [DevHive](https://devhive.itch.io/)

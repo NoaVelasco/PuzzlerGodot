@@ -21,16 +21,11 @@ GLOBAL="*res://global.gd"
 BackgroundMusic="*res://scenes/background_music.tscn"
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 
-
 [display]
 
 window/size/viewport_width=1664
 window/size/viewport_height=896
 window/stretch/mode="canvas_items"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg")
 
 [input]
 

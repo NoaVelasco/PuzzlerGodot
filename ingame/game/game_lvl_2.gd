@@ -3,6 +3,7 @@ extends Node2D
 
 @onready var player = $Duck
 @onready var ui = $UI_movement
+@onready var popup = $Level3/Window03
 @onready var label = $UI_movement/UI_Flechas
 @onready var label_shdw = $UI_movement/UI_Flechas_shdw
 @onready var win_snd = $Control/Win_snd
@@ -18,26 +19,25 @@ var commands = {"⬅️": Vector2(-1, 0),
 
 
 func _process(_delta):
-	if waiting_state:
-		if Input.is_action_just_pressed("move_left"):
-			movements.append("⬅️")
-		elif Input.is_action_just_pressed("move_right"):
-			movements.append("➡️")
-		elif Input.is_action_just_pressed("move_up"):
-			movements.append("⬆️")
-		elif Input.is_action_just_pressed("move_down"):
-			movements.append("⬇️")
-		elif Input.is_action_just_pressed("print"):
-			print(movements)
-		# Llena el label con las flechas añadidas.
-		label.text = "\n".join(movements)
-		label_shdw.text = label.text
-		# Solo caben 10 flechas actualmente. Deberían caber más.
-		if len(movements) >= 10:
-			waiting_state = false
-
+	if waiting_state and not popup.visible:
 		if Input.is_action_just_pressed("cadena"):
 			duckmoves()
+		# Solo caben 10 flechas actualmente. Deberían caber más.
+		elif len(movements) < 10:
+			if Input.is_action_just_pressed("move_left"):
+				movements.append("⬅️")
+			elif Input.is_action_just_pressed("move_right"):
+				movements.append("➡️")
+			elif Input.is_action_just_pressed("move_up"):
+				movements.append("⬆️")
+			elif Input.is_action_just_pressed("move_down"):
+				movements.append("⬇️")
+			elif Input.is_action_just_pressed("print"):
+				print(movements)
+			# Llena el label con las flechas añadidas.
+			label.text = "\n".join(movements)
+			label_shdw.text = label.text
+
 
 
 func duckmoves():
@@ -70,6 +70,8 @@ func check_win_con():
 		get_tree().change_scene_to_file("res://ingame/level/Lvl_3.tscn")
 	else:
 		fail_snd.play()
+		await fail_snd.finished
+		get_tree().change_scene_to_file("res://ingame/level/Lvl_2.tscn")
 
 
 func _on_button_pressed():

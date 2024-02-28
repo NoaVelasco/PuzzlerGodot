@@ -184,7 +184,7 @@ shape = SubResource("CircleShape2D_d6how")
 
 [node name="Window01" type="Window" parent="."]
 title = "Este es Gozzler"
-position = Vector2i(337, 176)
+position = Vector2i(304, 176)
 size = Vector2i(816, 292)
 wrap_controls = true
 unresizable = true
@@ -202,5 +202,5 @@ Ah, por cierto… Gozzler es muy torpe y se lanzará en cada dirección hasta ch
 label_settings = SubResource("LabelSettings_166av")
 autowrap_mode = 3
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_obtains_coin_1"]
 [connection signal="close_requested" from="Window01" to="." method="_on_window_01_close_requested"]

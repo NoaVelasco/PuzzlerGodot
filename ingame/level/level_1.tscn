@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://b18slsv71pgmp"]
+[gd_scene load_steps=11 format=3 uid="uid://d0g1svoc0yf16"]
 
 [ext_resource type="Texture2D" uid="uid://cx4dnlxa7seg5" path="res://ingame/level/sokoban_tilesheet.png" id="1_axevx"]
 [ext_resource type="Script" path="res://ingame/level/level_1.gd" id="2_dh1ci"]
 [ext_resource type="FontFile" uid="uid://dsxw7olfx76bi" path="res://fonts/connection_ii/ConnectionII.otf" id="3_2bijf"]
 [ext_resource type="FontFile" uid="uid://c7f2senb2ju30" path="res://fonts/montreal/Montreal-Regular.ttf" id="4_rys0u"]
-[ext_resource type="Texture2D" uid="uid://dn32q0dvcmvaf" path="res://assets/pato_inicio.jpeg" id="5_g0vjq"]
+[ext_resource type="Texture2D" path="res://assets/pato_inicio.jpeg" id="5_g0vjq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nunb2"]
 resource_name = "floor"

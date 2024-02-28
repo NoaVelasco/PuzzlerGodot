@@ -25,6 +25,7 @@ bg_color = Color(0.372549, 0.176471, 0.490196, 1)
 bg_color = Color(0.372549, 0.176471, 0.490196, 1)
 
 [node name="SaveGame" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_mwd0w")
 
 [node name="Camera2D" type="Camera2D" parent="."]

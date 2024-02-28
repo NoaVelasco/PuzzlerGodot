@@ -10,10 +10,10 @@ script = ExtResource("1_iek7r")
 [node name="Label" type="Label" parent="."]
 process_mode = 3
 visible = false
-offset_left = 763.0
-offset_top = 215.0
-offset_right = 1235.0
-offset_bottom = 319.0
+offset_left = 708.0
+offset_top = 374.0
+offset_right = 1180.0
+offset_bottom = 478.0
 theme_override_fonts/font = ExtResource("2_p7d1w")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 70
 text = "PAUSE"

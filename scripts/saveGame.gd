@@ -20,13 +20,13 @@ func _ready():
 	save_button.grab_focus()
 	popup.show()
 
-
 func _on_window_close_requested():
 	popup.hide()
 
 
 func _on_back_pressed():
 	popup.hide()
+	print("volver a options")
 	get_tree().change_scene_to_file("res://scenes/options.tscn")
 
 func _on_save_pressed():

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dudo7cgdiube5" path="res://scenes/perfil.tscn" id="4_lsrdw"]
 
 [node name="Game" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_alaus")
 
 [node name="Level1" parent="." instance=ExtResource("2_rlucc")]

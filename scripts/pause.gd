@@ -12,8 +12,7 @@ func _physics_process(delta):
 		# Pausa debe dejar mover el menú
 		print("estoy pausando ")
 		get_tree().paused = not get_tree().paused
-		# pantalla opciones requiere otro menu
-		$ColorRect.visible = not $ColorRect.visible
+		
 		$Label.visible = not $Label.visible
 		
 		

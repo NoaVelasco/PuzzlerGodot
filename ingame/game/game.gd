@@ -2,6 +2,11 @@ extends Node2D
 
 @onready var player = $Duck
 
+@onready var pause = preload("res://scenes/pause.tscn")
+@onready var menu = preload("res://scenes/options.tscn")
+
+
+
 var movements: Array = []
 var commands = {"left": Vector2(-1, 0),
 				"right": Vector2(1, 0),
@@ -10,10 +15,16 @@ var commands = {"left": Vector2(-1, 0),
 #var index_movs = 0
 #var len_movs = 0
 
-
-
+func _ready():
+	var instance_pause = pause.instantiate()
+	var instance_menu = menu.instantiate()
+	
+	add_child(instance_pause)
+	add_child(instance_menu)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	
 	if Input.is_action_just_pressed("move_left"):
 		movements.append("left")
 	elif Input.is_action_just_pressed("move_right"):

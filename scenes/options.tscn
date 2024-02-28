@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cblfsd3xdf0vu"]
+[gd_scene load_steps=7 format=3 uid="uid://cblfsd3xdf0vu"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_1qcl4"]
 [ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="3_1f7u4"]
@@ -24,10 +24,15 @@ bg_color = Color(0.372549, 0.176471, 0.490196, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76k6g"]
 bg_color = Color(0.372549, 0.176471, 0.490196, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohmvh"]
+bg_color = Color(0.372549, 0.176471, 0.490196, 1)
+
 [node name="options" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_1qcl4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [node name="Window" type="Window" parent="."]
 title = "Guardar partida"
@@ -57,10 +62,10 @@ offset_bottom = 346.0
 
 [node name="Save" type="Button" parent="Window/ColorRect/Control/Panel"]
 layout_mode = 0
-offset_left = 59.0
-offset_top = 178.0
-offset_right = 159.0
-offset_bottom = 217.0
+offset_left = 100.0
+offset_top = 130.0
+offset_right = 261.0
+offset_bottom = 169.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_11svw")
 text = "guardar partida
@@ -68,25 +73,30 @@ text = "guardar partida
 
 [node name="Back" type="Button" parent="Window/ColorRect/Control/Panel"]
 layout_mode = 0
-offset_left = 225.0
+offset_left = 135.0
 offset_top = 182.0
-offset_right = 315.0
+offset_right = 225.0
 offset_bottom = 218.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/focus = SubResource("StyleBoxFlat_76k6g")
-text = "cancelar
+text = "Volver
 "
 
-[node name="Load" type="Button" parent="Window/ColorRect/Control/Panel"]
+[node name="Salir" type="Button" parent="Window/ColorRect/Control/Panel"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 110.0
+offset_top = 240.0
+offset_right = 254.0
+offset_bottom = 276.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ohmvh")
+text = "Salir del juego"
 
 [node name="Label" type="Label" parent="Window/ColorRect/Control/Panel"]
 layout_mode = 0
-offset_left = 43.0
+offset_left = 100.0
 offset_top = 87.0
-offset_right = 328.0
+offset_right = 385.0
 offset_bottom = 113.0
 theme_override_fonts/font = ExtResource("3_1f7u4")
 theme_override_font_sizes/font_size = 25
@@ -96,3 +106,4 @@ text = "Opciones
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
 [connection signal="pressed" from="Window/ColorRect/Control/Panel/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Window/ColorRect/Control/Panel/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Window/ColorRect/Control/Panel/Salir" to="." method="_on_salir_pressed"]

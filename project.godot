@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Gozzler"
-run/main_scene="res://ingame/level/Lvl_1.tscn"
+run/main_scene="res://scenes/pantalla_inicio.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://assets/gozzler_cover.png"
+config/icon="res://assets/gozzler_cover_full.png"
 
 [autoload]
 

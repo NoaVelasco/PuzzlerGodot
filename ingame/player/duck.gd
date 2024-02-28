@@ -35,9 +35,6 @@ func _physics_process(_delta):
 		update_animation(motion)
 	# ------------
 
-	#if Input.is_action_just_pressed("testing"):
-		#await hit_by_button()
-
 
 func hitting_process():
 	'''Si choca, para y recupera su máscara de colisión.'''
@@ -77,5 +74,3 @@ func update_animation(direction: Vector2):
 		
 	if animated_sprite.animation != animation:
 		animated_sprite.play(animation)
-
-

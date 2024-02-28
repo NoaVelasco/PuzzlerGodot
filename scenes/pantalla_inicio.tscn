@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b4hhk114htiyf" path="res://Sprites/pantalla_inicio.png" id="1_rq356"]
 [ext_resource type="FontFile" uid="uid://3ab1nju8g1l3" path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" id="2_4fu3f"]
 [ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="3_2tsr1"]
-[ext_resource type="Script" path="res://scripts/Opciones.gd" id="5_ldh06"]
-[ext_resource type="Script" path="res://scripts/Salir del juego.gd" id="6_3tvcl"]
+[ext_resource type="Script" path="res://scripts/opciones_button.gd" id="5_ldh06"]
+[ext_resource type="Script" path="res://scripts/exit_game.gd" id="6_3tvcl"]
 
 [sub_resource type="Theme" id="Theme_01x5s"]
 
@@ -32,7 +32,10 @@ script/source = "extends Button
 # Si quiero una imagen que muestre una carga
 @export var path = \"res://scenes/loading.tscn\"
 
+# Redirige a name_player, va a ser necesario ahora?
 @export var path_name_player = \"res://scenes/name_player.tscn\"
+
+@export var path_auth = \"res://scenes/authentication.tscn\"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,7 +51,7 @@ func _on_pressed():
 	# Si el path no está vacío, llamamos a la ruta que he pasado
 	if path != \"\":
 		#get_tree().change_scene_to_file(path)
-		get_tree().change_scene_to_file(path_name_player)
+		get_tree().change_scene_to_file(path_auth)
 
 
 func _on_play_pressed():

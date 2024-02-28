@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbb7msgt6nim"]
+
+[ext_resource type="Script" path="res://scripts/authentication.gd" id="1_ue40r"]
+[ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="2_12ogq"]
+
+[node name="Authentication" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ue40r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1658.0
+offset_bottom = 901.0
+color = Color(0.352941, 0.254902, 0.490196, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 0
+offset_left = 676.0
+offset_top = 292.0
+offset_right = 1052.0
+offset_bottom = 515.0
+alignment = 1
+
+[node name="Email" type="LineEdit" parent="ColorRect/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Email"
+
+[node name="Password" type="LineEdit" parent="ColorRect/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Password"
+secret = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 2
+offset_left = 723.0
+offset_top = 495.0
+offset_right = 1011.0
+offset_bottom = 636.0
+
+[node name="LogInButton" type="Button" parent="ColorRect/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Log in
+"
+
+[node name="SignUpButton" type="Button" parent="ColorRect/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Sing up
+"
+
+[node name="LoginLabel" type="Label" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 473.0
+offset_top = 275.0
+offset_right = 1248.0
+offset_bottom = 324.0
+theme_override_fonts/font = ExtResource("2_12ogq")
+theme_override_font_sizes/font_size = 30
+text = "Login"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ColorRect/VBoxContainer2/LogInButton" to="." method="_on_log_in_button_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer2/SignUpButton" to="." method="_on_sign_up_button_pressed"]

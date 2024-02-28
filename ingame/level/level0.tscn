@@ -1,11 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://bkqdm6dt0ft2m"]
 
+
 [ext_resource type="Script" path="res://ingame/game/game_lvl_1.gd" id="1_alaus"]
 [ext_resource type="PackedScene" uid="uid://b18slsv71pgmp" path="res://ingame/level/level_1.tscn" id="2_rlucc"]
 [ext_resource type="PackedScene" uid="uid://daax07a3srmav" path="res://ingame/player/duck.tscn" id="3_kk8ym"]
 [ext_resource type="PackedScene" uid="uid://cxkl7onb2vbsi" path="res://scenes/ui_movement.tscn" id="4_t140x"]
 [ext_resource type="AudioStream" uid="uid://bb1qy5xijywuc" path="res://assets/win.wav" id="13_x6xqu"]
 [ext_resource type="AudioStream" uid="uid://do8jkx34ddx0d" path="res://assets/fail.wav" id="14_itiap"]
+
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_alaus")
@@ -39,6 +41,7 @@ stream = ExtResource("13_x6xqu")
 
 [node name="Fail_snd" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("14_itiap")
+
 
 [connection signal="body_entered" from="Level1/Area2D" to="Duck" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="UI_movement/Panel/Button" to="." method="_on_button_pressed"]

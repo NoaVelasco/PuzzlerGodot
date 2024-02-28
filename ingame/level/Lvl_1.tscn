@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwaqcomjyur6f"]
+[gd_scene load_steps=8 format=3 uid="uid://cwaqcomjyur6f"]
 
 [ext_resource type="Script" path="res://ingame/game/game_lvl_1.gd" id="1_lgmqq"]
 [ext_resource type="PackedScene" uid="uid://b18slsv71pgmp" path="res://ingame/level/level_1.tscn" id="2_n3use"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cxkl7onb2vbsi" path="res://scenes/ui_movement.tscn" id="4_ntpfk"]
 [ext_resource type="AudioStream" uid="uid://bb1qy5xijywuc" path="res://assets/win.wav" id="5_7gd13"]
 [ext_resource type="AudioStream" uid="uid://do8jkx34ddx0d" path="res://assets/fail.wav" id="6_ctnxe"]
+[ext_resource type="AudioStream" uid="uid://b0nj2pwvfasxk" path="res://assets/HerosCallingLOOP.wav" id="7_p6t66"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lgmqq")
@@ -43,8 +44,14 @@ stream = ExtResource("5_7gd13")
 [node name="Fail_snd" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("6_ctnxe")
 
+[node name="bckgrnd" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("7_p6t66")
+volume_db = -18.0
+autoplay = true
+
 [connection signal="body_entered" from="Level1/Area2D" to="Duck" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="UI_movement/Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="finished" from="Control/bckgrnd" to="." method="_on_bckgrnd_finished"]
 
 [editable path="Level1"]
 [editable path="Duck"]

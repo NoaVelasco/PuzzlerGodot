@@ -37,7 +37,7 @@ El juego contará con pantalla de inicio, menú de opciones, selección de nivel
 
 
 ## Recursos y créditos
-- Creadores: Noa Velasco y Javier… @TODO
+- Creadores: © 2024, Noa Velasco y Javier Maiz
 - Música: [Joel Francis Burford](https://joelfrancisburford.itch.io/)
 - Sprites:
 	- [DevHive](https://devhive.itch.io/)

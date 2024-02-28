@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="Gozzler"
-run/main_scene="res://ingame/level/level0.tscn"
+run/main_scene="res://ingame/level/Lvl_1.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GLOBAL="*res://global.gd"
-BackgroundMusic="*res://scenes/background_music.tscn"
 Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 
 [display]
@@ -78,4 +77,4 @@ testing={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"

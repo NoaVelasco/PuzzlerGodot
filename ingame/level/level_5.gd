@@ -21,3 +21,4 @@ func _obtains_coin_5(body):
 func _on_window_05_close_requested():
 	popup.hide()
 
+

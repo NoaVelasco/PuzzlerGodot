@@ -1,6 +1,6 @@
 extends Node2D
 
-
+@onready var music = $Control/bckgrnd
 @onready var player = $Duck
 @onready var ui = $UI_movement
 @onready var popup = $Level3/Window03
@@ -16,6 +16,7 @@ var commands = {"⬅️": Vector2(-1, 0),
 				"➡️": Vector2(1, 0),
 				"⬆️": Vector2(0, -1),
 				"⬇️": Vector2(0, 1)}
+
 
 
 func _process(_delta):
@@ -67,13 +68,17 @@ func check_win_con():
 	if player.win_con:
 		win_snd.play()
 		await win_snd.finished
-		get_tree().change_scene_to_file("res://ingame/level/Lvl_3.tscn")
+		get_tree().change_scene_to_file(GLOBAL.go_to_lvl(3))
 	else:
 		fail_snd.play()
 		await fail_snd.finished
-		get_tree().change_scene_to_file("res://ingame/level/Lvl_2.tscn")
+		get_tree().change_scene_to_file(GLOBAL.go_to_lvl(2))
 
 
 func _on_button_pressed():
 	if waiting_state:
 		duckmoves()
+
+
+func _on_bckgrnd_finished():
+	music.play()

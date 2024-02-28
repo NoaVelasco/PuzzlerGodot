@@ -16,8 +16,6 @@ var motion = Vector2.ZERO
 var playing = Vector2.ZERO
 var win_con = false
 
-#func _ready():
-	#position = Vector2(512, 576)
 
 func _physics_process(_delta):
 	# ----MOV UNTIL COLLIDE-------- 
@@ -81,20 +79,3 @@ func update_animation(direction: Vector2):
 		animated_sprite.play(animation)
 
 
-#func hit_by_button():
-	#'''Una prueba. Recrear colisión mediante tecla Backspace.'''
-	#hitting = true
-	#animated_sprite.play("hit")
-	#await animated_sprite.animation_finished
-	#print("ouch!")
-	#hitting = false
-
-#func play_recorded():
-	#if collision == true:
-		#motion = Vector2(0, 0)
-	#else:
-		#motion = Vector2(10,0)
-
-#func _on_area_2d_body_entered(_body):
-	#coin_snd.play()
-	#get_tree().change_scene_to_file("res://ingame/level/level_3.tscn")

@@ -25,7 +25,7 @@ var commands = {"⬅️": Vector2(-1, 0),
 func _ready():
 	var pause_ins = pause.instantiate()
 	var player_menu = menu_player.instantiate()
-	var options_menu = menu_player.instantiate()
+	var options_menu = menu_options.instantiate()
 	
 	add_child(pause_ins)
 	add_child(player_menu)

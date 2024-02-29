@@ -19,11 +19,8 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("menu"):
 		
-		# Pausa debe dejar mover el menú
-		print("abro menu ")
 		get_tree().paused = true
-		popup.show()
-			
+		popup.show()	
 		save_button.grab_focus()
 
 

@@ -8,7 +8,7 @@ Es aqui donde tengo que aplicar la lógica de save player
 var COLLECTION_ID = "games"
 
 var name_player : String
-var num_level : String = "2"
+var num_level : String
 
 
 @onready var popup = $Window
@@ -52,11 +52,9 @@ func save_data():
 	var auth = Firebase.Auth.auth
 	
 	if auth.localid != "":
-		print("esta autenticado")
-		print(GLOBAL.name_player.split("@")[0])
-		print(GLOBAL.name_player)
-		# print(auth.email)
+		
 		name_player = GLOBAL.name_player.split("@")[0]
+		num_level = str(GLOBAL.current_level)
 		var collection: FirestoreCollection = Firebase.Firestore.collection(COLLECTION_ID)
 		
 		# Valores que voy a guardar

@@ -2,8 +2,6 @@ extends Node2D
 
 var COLLECTION_ID = "games"
 
-
-
 var nivel : String
 
 # Called when the node enters the scene tree for the first time.
@@ -15,12 +13,8 @@ func _ready():
 	print("nivel " + nivel)
 	
 	print(int(nivel))
-	
-
-		#%lvl_1.visible = not %lvl_1.visible
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 	
@@ -48,7 +42,10 @@ func load_data():
 		var finished_task: FirestoreTask = await task.task_finished
 		var document = finished_task.document
 		
+		print(document)
+		
 		if !(document):
+			print("!si no document")
 			nivel = "1"
 		else:
 			nivel = document.doc_fields.level
@@ -78,14 +75,17 @@ func _on_load_pressed():
 
 
 func _on_lvl_1_pressed():
+	GLOBAL.current_level = 1
 	get_tree().change_scene_to_file("res://ingame/level/Lvl_1.tscn")
 
 
 func _on_lvl_2_pressed():
+	GLOBAL.current_level = 2
 	get_tree().change_scene_to_file("res://ingame/level/Lvl_2.tscn")
 
 
 func _on_lvl_3_pressed():
+	GLOBAL.current_level = 3
 	get_tree().change_scene_to_file("res://ingame/level/Lvl_3.tscn")
 
 

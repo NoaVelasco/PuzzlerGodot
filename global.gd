@@ -9,7 +9,7 @@ var curr_lvl_path = "res://ingame/level/Lvl_" + str(current_level) + ".tscn"
 var name_player : String
 var score : int
 
-var pause : bool
+var pause = false
 
 
 # Movimiento del jugador

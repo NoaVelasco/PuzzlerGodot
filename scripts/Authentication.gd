@@ -1,7 +1,8 @@
 extends Control
 
 @export var path = "res://scenes/loading.tscn"
-@export var path2 = "res://scenes/perfil.tscn"
+# @export var path2 = "res://scenes/perfil.tscn"
+@export var path2 = "res://scenes/load_game.tscn"
 
 var name_player : String
 
@@ -73,7 +74,7 @@ func on_signup_succeeded(auth):
 	
 	Firebase.Auth.save_auth(auth)
 	Firebase.Auth.load_auth()
-	get_tree().change_scene_to_file(path)
+	# get_tree().change_scene_to_file(path)
 	
 func on_login_failed(error_code, message):
 	print(error_code)
@@ -87,3 +88,7 @@ func on_signup_failed(error_code, message):
 	%LoginLabel.text = "Sign up failed: %s" % message
 	
 	
+
+
+func _on_salir_pressed():
+	get_tree().change_scene_to_file("res://scenes/pantalla_inicio.tscn")

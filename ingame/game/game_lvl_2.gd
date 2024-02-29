@@ -9,6 +9,10 @@ extends Node2D
 @onready var win_snd = $Control/Win_snd
 @onready var fail_snd = $Control/Fail_snd
 
+@onready var pause = preload("res://scenes/pause.tscn")
+@onready var menu_player = preload("res://scenes/perfil.tscn")
+@onready var menu_options = preload("res://scenes/options.tscn")
+
 
 var waiting_state: bool = true  # impide añadir nuevos movimientos cuando mueve
 var movements: Array = []
@@ -16,7 +20,16 @@ var commands = {"⬅️": Vector2(-1, 0),
 				"➡️": Vector2(1, 0),
 				"⬆️": Vector2(0, -1),
 				"⬇️": Vector2(0, 1)}
-
+				
+				
+func _ready():
+	var pause_ins = pause.instantiate()
+	var player_menu = menu_player.instantiate()
+	var options_menu = menu_options.instantiate()
+	
+	add_child(pause_ins)
+	add_child(player_menu)
+	add_child(options_menu)
 
 
 func _process(_delta):

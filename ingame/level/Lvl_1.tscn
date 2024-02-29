@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwaqcomjyur6f"]
+[gd_scene load_steps=8 format=3 uid="uid://cv18m1u7dgrj2"]
 
 [ext_resource type="Script" path="res://ingame/game/game_lvl_1.gd" id="1_lgmqq"]
-[ext_resource type="PackedScene" uid="uid://b18slsv71pgmp" path="res://ingame/level/level_1.tscn" id="2_n3use"]
+[ext_resource type="PackedScene" uid="uid://d0g1svoc0yf16" path="res://ingame/level/level_1.tscn" id="2_n3use"]
 [ext_resource type="PackedScene" uid="uid://daax07a3srmav" path="res://ingame/player/duck.tscn" id="3_t2fl6"]
 [ext_resource type="PackedScene" uid="uid://cxkl7onb2vbsi" path="res://scenes/ui_movement.tscn" id="4_ntpfk"]
 [ext_resource type="AudioStream" uid="uid://bb1qy5xijywuc" path="res://assets/win.wav" id="5_7gd13"]

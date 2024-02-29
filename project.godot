@@ -13,7 +13,9 @@ config_version=5
 config/name="Gozzler"
 run/main_scene="res://scenes/pantalla_inicio.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+
 config/icon="res://assets/gozzler_cover_full.png"
+
 
 [autoload]
 
@@ -24,7 +26,12 @@ Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 
 window/size/viewport_width=1664
 window/size/viewport_height=896
+window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
 
 [input]
 
@@ -60,12 +67,22 @@ print={
 }
 pausa={
 "deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"echo":false,"script":null)
+]
+}
+menu={
+"deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
-testing={
+yes={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194308,"key_label":0,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":89,"key_label":0,"unicode":121,"echo":false,"script":null)
+]
+}
+No={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":120,"echo":false,"script":null)
 ]
 }
 
@@ -77,4 +94,4 @@ testing={
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
+renderer/rendering_method="mobile"

@@ -103,7 +103,7 @@ offset_top = 121.208
 offset_right = 413.667
 offset_bottom = 170.208
 theme = SubResource("Theme_01x5s")
-text = "GODZLER"
+text = "GOZZLER"
 label_settings = SubResource("LabelSettings_m081h")
 
 [node name="Play" type="Button" parent="Sprite2D/ColorRect/Control"]

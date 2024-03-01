@@ -11,6 +11,15 @@ var score : int
 
 var pause = false
 
+var win : bool
+
+'''
+Sobre save_data
+'''
+var COLLECTION_ID = "games"
+var num_level : String
+
+
 
 # Movimiento del jugador
 var axis : Vector2
@@ -43,3 +52,24 @@ func get_axis() -> Vector2:
 
 
 '''
+
+
+func save_data():
+	# compruebo si el user está autenticado:
+	var auth = Firebase.Auth.auth
+	
+	if auth.localid != "":
+		
+		name_player = GLOBAL.name_player.split("@")[0]
+		num_level = str(GLOBAL.current_level)
+		var collection: FirestoreCollection = Firebase.Firestore.collection(COLLECTION_ID)
+		
+		# Valores que voy a guardar
+		var data: Dictionary = {
+			"name_player" : name_player,
+			"level": num_level
+		}
+		var task: FirestoreTask = collection.update(auth.localid, data)
+		
+	get_tree().paused = false
+

@@ -13,7 +13,9 @@ extends Node2D
 @onready var pause = preload("res://scenes/pause.tscn")
 @onready var menu_player = preload("res://scenes/perfil.tscn")
 @onready var menu_options = preload("res://scenes/options.tscn")
+@onready var win_lose = preload("res://scenes/win.tscn")
 
+var mensaje
 
 var waiting_state: bool = true  # impide añadir nuevos movimientos cuando mueve
 var movements: Array = []
@@ -23,13 +25,20 @@ var commands = {"⬅️": Vector2(-1, 0),
 				"⬇️": Vector2(0, 1)}
 
 func _ready():
+	GLOBAL.save_data()
+	
 	var pause_ins = pause.instantiate()
 	var player_menu = menu_player.instantiate()
 	var options_menu = menu_options.instantiate()
+	var win_lose_canvas = win_lose.instantiate()
 	
+
 	add_child(pause_ins)
 	add_child(player_menu)
 	add_child(options_menu)
+	add_child(win_lose_canvas)
+	
+	mensaje = win_lose_canvas.mensaje
 	
 
 func _process(_delta):
@@ -79,11 +88,17 @@ func duckmoves():
 func check_win_con():
 	'''Comprueba si el jugador ha logrado objetivo o ha fallado.'''
 	if player.win_con:
+		mensaje.text = "!!Enhorabuena!!"
+		mensaje.show()
 		win_snd.play()
+		GLOBAL.win = true		
 		await win_snd.finished
 		get_tree().change_scene_to_file(GLOBAL.go_to_lvl(4))
 	else:
 		fail_snd.play()
+		GLOBAL.win = false
+		mensaje.text = "!Vuelve a intentarlo!"
+		mensaje.show()
 		await fail_snd.finished
 		get_tree().change_scene_to_file(GLOBAL.go_to_lvl(3))
 

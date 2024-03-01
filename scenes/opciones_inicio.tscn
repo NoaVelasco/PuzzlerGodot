@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://c187xy3cpi80g"]
+
+[ext_resource type="Script" path="res://scripts/opciones_inicio.gd" id="1_s3jp7"]
+[ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="2_dpy26"]
+
+[node name="OpcionesInicio" type="Node2D"]
+script = ExtResource("1_s3jp7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1658.0
+offset_bottom = 894.0
+color = Color(0.372549, 0.176471, 0.490196, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 619.0
+offset_top = 224.0
+offset_right = 1091.0
+offset_bottom = 370.0
+theme_override_fonts/font = ExtResource("2_dpy26")
+theme_override_font_sizes/font_size = 35
+text = "En construcción...
+"
+
+[node name="volver" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 435.0
+offset_right = 953.0
+offset_bottom = 531.0
+theme_override_fonts/font = ExtResource("2_dpy26")
+theme_override_font_sizes/font_size = 25
+text = "Volver a inicio"
+
+[connection signal="pressed" from="ColorRect/volver" to="." method="_on_volver_pressed"]

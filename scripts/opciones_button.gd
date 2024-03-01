@@ -3,7 +3,7 @@ extends Button
 #@export var path = "res://scenes/escena3DInicial.tscn"
 
 # Si quiero una imagen que muestre una carga
-@export var path = "res://scenes/options.tscn"
+@export var path = "res://scenes/opciones_inicio.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

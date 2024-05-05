@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch0tvp1cfm07b"]
+[gd_scene load_steps=6 format=3 uid="uid://ch0tvp1cfm07b"]
 
 [ext_resource type="Script" path="res://scripts/load_game.gd" id="1_xjge2"]
 [ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="2_7gygs"]
+[ext_resource type="Texture2D" uid="uid://dmcbbg1huonlh" path="res://_img/level1.png" id="3_w4qgx"]
+[ext_resource type="Texture2D" uid="uid://6057ec1hav3m" path="res://_img/level2.png" id="4_5ac12"]
+[ext_resource type="Texture2D" uid="uid://ddwjij1p2ul1i" path="res://_img/level3.png" id="5_87dae"]
 
 [node name="control" type="Node2D"]
 script = ExtResource("1_xjge2")
@@ -29,26 +32,29 @@ text = "Player:"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="ColorRect"]
 layout_mode = 0
-offset_left = 420.0
-offset_top = 419.0
-offset_right = 1274.0
-offset_bottom = 489.0
+offset_left = 324.0
+offset_top = 384.0
+offset_right = 1423.0
+offset_bottom = 445.0
 theme_override_constants/separation = 400
 
 [node name="lvl_1" type="Button" parent="ColorRect/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "      1     "
+mouse_default_cursor_shape = 2
+text = "    Nivel   1   "
 
 [node name="lvl_2" type="Button" parent="ColorRect/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "     2     "
+mouse_default_cursor_shape = 2
+text = "  NIvel  2  "
 
 [node name="lvl_3" type="Button" parent="ColorRect/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "     3     "
+mouse_default_cursor_shape = 2
+text = "    Nivel  3     "
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
@@ -60,6 +66,35 @@ theme_override_fonts/font = ExtResource("2_7gygs")
 theme_override_font_sizes/font_size = 30
 text = "selecciona nivel:
 "
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 507.0
+offset_right = 1508.0
+offset_bottom = 749.0
+theme_override_constants/separation = 200
+
+[node name="l1" type="TextureButton" parent="ColorRect/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_w4qgx")
+stretch_mode = 0
+
+[node name="l2" type="TextureButton" parent="ColorRect/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_5ac12")
+
+[node name="l3" type="TextureButton" parent="ColorRect/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_87dae")
 
 [node name="logout" type="Button" parent="."]
 offset_left = 1476.0
@@ -73,4 +108,7 @@ text = "Exit"
 [connection signal="pressed" from="ColorRect/HBoxContainer2/lvl_1" to="." method="_on_lvl_1_pressed"]
 [connection signal="pressed" from="ColorRect/HBoxContainer2/lvl_2" to="." method="_on_lvl_2_pressed"]
 [connection signal="pressed" from="ColorRect/HBoxContainer2/lvl_3" to="." method="_on_lvl_3_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer3/l1" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer3/l2" to="." method="_on_l_2_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer3/l3" to="." method="_on_l_3_pressed"]
 [connection signal="pressed" from="logout" to="." method="_on_logout_pressed"]

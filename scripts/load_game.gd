@@ -8,24 +8,22 @@ var nivel : String
 func _ready():
 	%Player_load.text = "Player " + GLOBAL.name_player.split("@")[0]
 	load_data()
-	
-	
-	print("nivel " + nivel)
+	%lvl_1.grab_focus()
 	
 	print(int(nivel))
-
-
-func _process(delta):
-	pass
 	
 func check_level(nivel):
+	'''
 	if int(nivel) == 1:
 		get_tree().change_scene_to_file("res://ingame/level/Lvl_1.tscn")
+	'''
 	if int(nivel) < 2:
 		print("entra en > 2")
 		%lvl_2.disabled = true
+		%l2.disabled = true
 	if int(nivel) < 3:
 		%lvl_3.disabled = true
+		%l3.disabled = true
 	
 func load_data():
 		# compruebo si el user está autenticado:
@@ -92,3 +90,18 @@ func _on_lvl_3_pressed():
 func _on_logout_pressed():
 	Firebase.Auth.logout()
 	get_tree().change_scene_to_file("res://scenes/authentication.tscn")
+
+
+func _on_l_1_pressed():
+	GLOBAL.current_level = 1
+	get_tree().change_scene_to_file("res://ingame/level/Lvl_1.tscn")
+
+
+func _on_l_2_pressed():
+	GLOBAL.current_level = 2
+	get_tree().change_scene_to_file("res://ingame/level/Lvl_2.tscn")
+
+
+func _on_l_3_pressed():
+	GLOBAL.current_level = 3
+	get_tree().change_scene_to_file("res://ingame/level/Lvl_3.tscn")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2bog3p8i24gm"]
+
+[ext_resource type="Script" path="res://scripts/win.gd" id="1_7qbrk"]
+[ext_resource type="FontFile" uid="uid://drd81v20b2ify" path="res://fonts/kirifont/KiriFont.ttf" id="2_2n25p"]
+
+[node name="Win" type="CanvasLayer"]
+script = ExtResource("1_7qbrk")
+
+[node name="win_lose" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 544.0
+offset_top = 304.0
+offset_right = 988.0
+offset_bottom = 575.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.372549, 0.176471, 0.490196, 1)
+theme_override_fonts/font = ExtResource("2_2n25p")
+theme_override_font_sizes/font_size = 50

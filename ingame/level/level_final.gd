@@ -7,4 +7,5 @@ func _on_window_final_confirmed():
 
 
 func _on_window_final_canceled():
+	Firebase.Auth.logout()
 	get_tree().change_scene_to_file("res://scenes/pantalla_inicio.tscn")

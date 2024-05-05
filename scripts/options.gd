@@ -15,7 +15,6 @@ func _ready():
 	instance_menu_save = menu_save.instantiate()
 	add_child(instance_menu_save)
 	
-	
 func _process(delta):
 	if Input.is_action_just_pressed("menu"):
 		
@@ -23,11 +22,8 @@ func _process(delta):
 		popup.show()	
 		save_button.grab_focus()
 
-
-
 func _on_window_close_requested():
 	popup.hide()
-
 
 func _on_back_pressed():
 	get_tree().paused = false
@@ -36,7 +32,6 @@ func _on_back_pressed():
 
 
 func _on_save_pressed():
-
 	instance_menu_save.popup.show()
 	popup.hide()
 

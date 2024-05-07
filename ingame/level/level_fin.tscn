@@ -170,8 +170,8 @@ script = ExtResource("2_a4rqw")
 
 [node name="WindowFinal" type="ConfirmationDialog" parent="."]
 title = "Enhorabuena"
-position = Vector2i(215, 121)
-size = Vector2i(920, 304)
+position = Vector2i(200, 121)
+size = Vector2i(920, 340)
 visible = true
 unresizable = true
 transparent = true
@@ -179,9 +179,10 @@ ok_button_text = "¡VALE!"
 dialog_text = "Has ganado el juego, pero...
 
 Te acabas de dar cuenta de que Gozzler ¡TE HA TIMADO!
-Nunca necesitó ir al dentista, solo quería el dinero para poder desplegar sus aplicaciones en Google Cloud Platform, la mejor nube del mercado. Te lo deja todo facilito y tú solo tienes que preocuparte de vivir en tu nube. 
 
-Enhorabuena. 
+Con el dinero que le ayudaste a ganar invirtió en criptomonedas de chocolate. Puede que Gozzler parezca ahora más listo que antes, pero no te equivoques. En cuanto el criptomonedero se calentó un poquito, se le derritió toda la inversión. 
+
+Nunca te fíes de un pato que solo sabe rodar y golpearse contra las paredes.
 
 ¿Quieres volver a jugar?"
 dialog_autowrap = true

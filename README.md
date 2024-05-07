@@ -1,13 +1,17 @@
 # Gozzler
 
 ## Qué es Gozzler
-Puzzler Godot es un juego 2D de resolución de puzles con una mecánica basada en la programación de movimientos. 
+Puzzler Godot es un juego 2D de resolución de puzles con una mecánica basada en la programación de movimientos.  
+
+¡Juega la demo en [Itch.io](https://gozzler.itch.io/gozzler)!
+
+![Gozzler](_img/screenshot-lvl3.jpg)
 
 ### Etiquetas
 #casual #indie #2d #puzzle #pixel
 
 ## Cómo se juega
-En cada nivel, el personaje comienza en un punto de inicio y debe llegar a un punto final (objetivo) a través de un escenario predefinido, y con la particularidad de que nuestro personaje, una vez inicia su movimiento, no se detendrá hasta chocar con un obstáculo. Para superar el nivel, el jugador deberá estudiar el laberinto y anticipar qué movimientos debe realizar el personaje para llegar. En ocasiones existe más de una secuencia de movimientos para resolver el puzle, pero el reto consiste en encontrar el mejor camino (por lo general, el más rápido).
+En cada nivel, el personaje comienza en un punto de inicio y debe llegar a un punto final (objetivo) a través de un escenario predefinido, y con la particularidad de que nuestro personaje, una vez inicia su movimiento, no se detendrá hasta chocar con un obstáculo. Para superar el nivel, el jugador deberá estudiar el laberinto y anticipar qué movimientos debe realizar el personaje para llegar. En ocasiones existe más de una secuencia de movimientos para resolver el puzle, pero el reto consiste en encontrar el mejor camino (por lo general, el más rápido).  
 
 ![muestra](_img\level1_050724_081410_PM.jpg)
 

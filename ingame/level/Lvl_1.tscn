@@ -40,9 +40,11 @@ size_flags_horizontal = 0
 
 [node name="Win_snd" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("5_7gd13")
+volume_db = -14.696
 
 [node name="Fail_snd" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("6_ctnxe")
+volume_db = -19.217
 
 [node name="bckgrnd" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("7_p6t66")
